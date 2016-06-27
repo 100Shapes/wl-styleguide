@@ -1,0 +1,175 @@
+// General
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	text-transform: uppercase;
+}
+h1,
+h2 {
+	letter-spacing: 0.3px;
+}
+
+input:disabled,
+input[readonly],
+textarea:disabled,
+textarea[readonly] {
+	border-color: $bg-gray;
+}
+
+.fields {
+	.title {
+		color: map-get($foundation-palette, field-green);
+	}
+}
+
+// Sections
+.container {
+	margin-bottom: 2.5em;
+	padding: 2.5em 0 2em;	
+}
+
+.wrapper {
+	&.primary {
+		background-color: map-get($foundation-palette, aubergine); 
+		color: $white;
+	}
+	background-color: $white; 
+	&.top-header {
+		.full-screen-banner {
+			background-image: url(../images/La-Digue-Beach-Seychelles.jpg);
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			-webkit-background-size: cover;
+			background-size: cover;
+			position: relative;
+			background-position: 50% 50%;
+			/* ie8- graceful degradation */
+			background-position:50% 50%9 !important;
+			width:100%;
+			height:100%;
+			overflow:hidden;
+			.content {
+				padding: 4em 0;
+				display:table;
+			}
+			.copy {
+			    display:table-cell;
+			    position:relative;
+			    vertical-align:middle;
+			    text-align:center;
+			    color: $white;
+			}
+		}
+		.slim-full-width-form {
+			background-color: map-get($foundation-palette, field-green);
+			padding: 1em 0; 
+		}
+	}
+}
+
+.left-aligned-image-text {
+	.row {
+		position: relative;
+	}
+	.callout {
+		border-radius: 4px 0 0 4px;
+	}
+	.copy {
+		padding: 1em 0;
+	}
+	.image {
+		background-image: url(../images/beach-house.jpg);
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-webkit-background-size: cover;
+		background-size: cover;
+		position: relative;
+		background-position: 50% 50%;
+		/* ie8- graceful degradation */
+		background-position:50% 50%9 !important;
+		width: auto;
+		height:100%;
+		overflow:hidden;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		border-radius: 4px;
+		@include breakpoint(small) {
+			
+		}
+	}
+}
+
+.right-aligned-image-text {
+	.row {
+		position: relative;
+	}
+	.callout {
+		border-radius: 0 4px 4px 0;
+	}
+	.copy {
+		padding: 1em 0;
+	}
+	.image {
+		background-image: url(../images/beach-house.jpg);
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-webkit-background-size: cover;
+		background-size: cover;
+		position: relative;
+		background-position: 50% 50%;
+		/* ie8- graceful degradation */
+		background-position:50% 50%9 !important;
+		width: 50%;
+		height:100%;
+		overflow:hidden;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		border-radius: 4px;
+		@include breakpoint(small) {
+			
+		}
+	}
+}
+
+// Navigation
+
+.top-bar {
+	.top-bar-left {
+		a {
+			color: map-get($foundation-palette, light-orange);
+			font-family: $header-font-family;
+			text-transform: uppercase;
+		}
+	}
+	
+}
+
+// Buttons
+
+.button {
+	text-transform: uppercase;
+	font-weight: $global-weight-bold;
+	box-shadow: 2px 2px rgba($black, .3);
+	&:only-child {
+		margin: 0;
+	}
+}
+
+// Callout
+
+.callout.primary {
+	color: $white;
+	input:focus {
+		border-color: map-get($foundation-palette, camden-orange);
+	}
+	label {
+		color: $white;
+	}
+}

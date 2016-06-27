@@ -7,155 +7,326 @@
     <title>Foundation for Sites</title>
     <link rel="stylesheet" href="css/app.css">
   </head>
-  <body>
-    <div class="row">
-      <div class="large-12 columns">
-        <h1>Welcome to Foundation</h1>
+  <body class="fields">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-title">
+        <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+          <button class="menu-icon dark" type="button" data-toggle></button>
+        </span>
+        <strong>Work.Life</strong>
+      </div>
+      <div id="responsive-menu">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu data-disable-hover="true" data-click-open="true">
+            <li>
+              <a href="#">Locations</a>
+              <ul class="menu vertical">
+                <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Perfect For</a>
+              <ul class="menu vertical">
+                <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Meeting Rooms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" class="button">Book a Tour</a>
       </div>
     </div>
-    
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="callout">
-          <h3>We&rsquo;re stoked you want to try Foundation! </h3>
-          <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
-          <p>Once you've exhausted the fun in this document, you should check out:</p>
-          <div class="row">
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</p>
+    <!-- Header Banner -->
+    <div class="wrapper top-header">
+      <div class="full-screen-banner"  data-img-width="2560" data-img-height="1600">
+        <div class="row">
+          <div class="large-6 large-offset-3 small-12 columns text-center content">
+            <div class="copy">
+              <h1>London Fields</h1>
+              <h2>The newest workspace in North London</h2>
             </div>
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://zurb.com/university/code-skills">Foundation Code Skills</a><br />These online courses offer you a chance to better understand how Foundation works and how you can master it to create awesome projects.</p>
-            </div>
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://foundation.zurb.com/forum">Foundation Forum</a><br />Join the Foundation community to ask a question or show off your knowlege.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 medium-4 medium-push-2 columns">
-              <p><a href="http://github.com/zurb/foundation">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</p>
-            </div>
-            <div class="large-4 medium-4 medium-pull-2 columns">
-              <p><a href="https://twitter.com/ZURBfoundation">@zurbfoundation</a><br />Ping us on Twitter if you have questions. When you build something with this we'd love to see it (and send you a totally boss sticker).</p>
-            </div>        
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="large-8 medium-8 columns">
-        <h5>Here&rsquo;s your basic grid:</h5>
-        <!-- Grid Example -->
-
+      <div class="slim-full-width-form">
         <div class="row">
           <div class="large-12 columns">
-            <div class="primary callout">
-              <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+            <ul class="menu row">
+              <li class="large-3 medium-3 small-12 columns">Book a tour</li>
+              <li class="large-3 medium-3 small-12 columns"><input type="text" placeholder="Name"></li>
+              <li class="large-3 medium-3 small-12 columns"><input type="email" placeholder="Email"></li>
+              <li class="large-3 medium-3 small-12 columns"><button type="button" class="button">Submit</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left Aligned Component -->
+    <div class="container left-aligned-image-text">
+      <div class="row large-collapse small-collapse">
+        <div class="large-6 large-push-6 small-12 columns image">
+        </div>
+        <div class="large-6 large-pull-6 small-12 columns copy">
+          <div class="primary callout row">
+            <div class="large-10 large-offset-1 ">
+              <h3 class="title">Your home away from home</h3>
+              <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="large-6 medium-6 columns">
-            <div class="primary callout">
-              <p>Six columns</p>
-            </div>
-          </div>
-          <div class="large-6 medium-6 columns">
-            <div class="primary callout">
-              <p>Six columns</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="primary callout">
-              <p>Four columns</p>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="primary callout">
-              <p>Four columns</p>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="primary callout">
-              <p>Four columns</p>
-            </div>
-          </div>
-        </div>
-        
-        <hr />
-                
-        <h5>We bet you&rsquo;ll need a form somewhere:</h5>
-        <form>
+      </div>
+    </div>
+
+    <!-- Tabbed Promo Component -->
+    <div class="container wrapper">
+      <div class="row text-center tabs">
+        <ul class="tabs" data-tabs id="example-tabs">
+          <li class="tabs-title is-active"><a href="#panel1" aria-selected="true"><h4 class="title">Shared Workspace</h4></a></li>
+          <li class="tabs-title"><a href="#panel2"><h4 class="title">Meeting Space</h4></a></li>
+          <li class="tabs-title"><a href="#panel3"><h4 class="title">Mood Boards</h4></a></li>
+        </ul>
+      </div>
+      <div class="row text-center tabs-content" data-tabs-content="example-tabs">
+        <div class="large-12 small-12 columns tabs-panel is-active" id="panel1">
           <div class="row">
-            <div class="large-12 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-12.columns" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 medium-4 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-4.columns" />
-            </div>
-            <div class="large-4 medium-4 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-4.columns" />
-            </div>
-            <div class="large-4 medium-4 columns">
-              <div class="row collapse">
-                <label>Input Label</label>
-                <div class="input-group">
-                  <input type="text" placeholder="small-9.columns" class="input-group-field" />
-                  <span class="input-group-label">.com</span>
-                </div>
+            <div class="primary callout large-4 large-push-7">
+              <div class="">
+                <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+                <a href="#" class="button">Come and see</a>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Select Box</label>
-              <select>
-                <option value="husker">Husker</option>
-                <option value="starbuck">Starbuck</option>
-                <option value="hotdog">Hot Dog</option>
-                <option value="apollo">Apollo</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-6 medium-6 columns">
-              <label>Choose Your Favorite</label>
-              <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
-              <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
-            </div>
-            <div class="large-6 medium-6 columns">
-              <label>Check these out</label>
-              <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-              <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Textarea Label</label>
-              <textarea placeholder="small-12.columns"></textarea>
-            </div>
-          </div>
-        </form>
-      </div>     
+        </div>
+        <div class="large-12 small-12 columns tabs-panel" id="panel2">
+          <p>2. If you are using fish, or a Windows shell such as Powershell/cmd.exe the above method will not work as described. Instead, see the env command’s documentation to learn how to set the environment variables for your shell.</p>
+          <a href="#" class="button">Let it go</a>
+        </div>
+        <div class="large-12 small-12 columns tabs-panel" id="panel3">
+          <p>3. This sets environment variables for the current shell that the Docker client will read which specify the TLS settings. You need to do this each time you open a new shell or restart your machine. You can now run Docker commands on this host.</p>
+          <a href="#" class="button">Don't panic</a>
+        </div>
+      </div>
+    </div>
 
-      <div class="large-4 medium-4 columns">
-        <h5>Try one of these buttons:</h5>
-        <p><a href="#" class="button">Simple Button</a><br/>       
-        <a href="#" class="success button">Success Btn</a><br/>
-        <a href="#" class="alert button">Alert Btn</a><br/>
-        <a href="#" class="secondary button">Secondary Btn</a></p>           
+    <!-- Value Component -->
+    <div class="container wrapper">
+      <div class="row text-center">
+        <h3 class="title">Everything you need</h3>
+        <p>We've designed our spaces around things that matter most for our members.</p>
+      </div>
+      <div class="row text-center">
+        <div class="large-4 small-12 columns">
+          <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+        </div>
+        <div class="large-4 small-12 columns">
+          <p>2. If you are using fish, or a Windows shell such as Powershell/cmd.exe the above method will not work as described. Instead, see the env command’s documentation to learn how to set the environment variables for your shell.</p>
+        </div>
+        <div class="large-4 small-12 columns">
+          <p>3. This sets environment variables for the current shell that the Docker client will read which specify the TLS settings. You need to do this each time you open a new shell or restart your machine. You can now run Docker commands on this host.</p>
+        </div>
+        <div class="large-4 small-12 columns">
+          <p>4. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+        </div>
+        <div class="large-4 small-12 columns">
+          <p>5. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+        </div>
+        <div class="large-4 small-12 columns">
+          <p>6. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Commitment Section -->
+    <div class="container wrapper primary">
+      <div class="row text-center">
+        <h3 class="title">Commitment Phobe?</h3>
+        <p>We're OK with that... We've designed our spaces around things that matter most for our members.</p>
+      </div>
+      <div class="row text-center">
+        <div class="large-4 small-12 columns">
+          <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+        </div>
+        <div class="large-4 small-12 columns">
+          <p>2. If you are using fish, or a Windows shell such as Powershell/cmd.exe the above method will not work as described. Instead, see the env command’s documentation to learn how to set the environment variables for your shell.</p>
+        </div>
+        <div class="large-4 small-12 columns">
+          <p>3. This sets environment variables for the current shell that the Docker client will read which specify the TLS settings. You need to do this each time you open a new shell or restart your machine. You can now run Docker commands on this host.</p>
+        </div>
+      </div>
+      <div class="row perks">
+
+      </div>
+    </div>
+
+    <!-- Logo Section -->
+    <div class="container wrapper">
+      <div class="row text-center">
+        <h3 class="title">Our members include</h3>
+      </div>
+      <div class="row text-center">
+        <div class="large-2 large-offset-1 small-12 columns">
+          <p>1. Logo</p>
+        </div>
+        <div class="large-2 small-12 columns">
+          <p>2. Logo</p>
+        </div>
+        <div class="large-2 small-12 columns">
+          <p>3. Logo</p>
+        </div>
+        <div class="large-2 small-12 columns">
+          <p>4. Logo</p>
+        </div>
+        <div class="large-2 small-12 columns end">
+          <p>5. Logo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Aligned Component -->
+    <div class="container right-aligned-image-text">
+      <div class="row large-collapse small-collapse">
+        <div class="large-6 small-12 columns image">
+        </div>
+        <div class="large-6 small-12 columns copy">
+          <div class="primary callout row">
+            <div class="large-10 large-offset-1 ">
+              <h3 class="title">Need a meeting room?</h3>
+              <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+              <a href="#" class="button">See the rooms</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <h5>Form UI</h5>
         <div class="callout">
-          <h5>So many components, girl!</h5>
-          <p>A whole kitchen sink of goodies comes with Foundation. Check out the docs to see them all, along with details on making them your own.</p>
-          <a href="http://foundation.zurb.com/sites/docs/" class="small button">Go to Foundation Docs</a>          
+          <h5>Form UI Light</h5>
+          <form>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-12.columns" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-4 medium-4 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-4.columns" />
+              </div>
+              <div class="large-4 medium-4 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-4.columns" disabled class="disabled" />
+              </div>
+              <div class="large-4 medium-4 columns">
+                <div class="row collapse">
+                  <label>Input Label</label>
+                  <div class="input-group">
+                    <input type="text" placeholder="small-9.columns" class="input-group-field" />
+                    <span class="input-group-label">.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Select Box</label>
+                <select>
+                  <option value="husker">Husker</option>
+                  <option value="starbuck">Starbuck</option>
+                  <option value="hotdog">Hot Dog</option>
+                  <option value="apollo">Apollo</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-6 medium-6 columns">
+                <label>Choose Your Favorite</label>
+                <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
+                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+              </div>
+              <div class="large-6 medium-6 columns">
+                <label>Check these out</label>
+                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Textarea Label</label>
+                <textarea placeholder="small-12.columns"></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="primary callout">
+          <h5>Form UI Dark</h5>
+          <form data-abide>
+            <div class="row">
+              <div class="large-6 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-12.columns" />
+              </div>
+              <div class="large-6 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-12.columns" focus />
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-4 medium-4 columns error">
+                <label>Input Label</label>
+                <input type="text" placeholder="Error" class="is-invalid-input" required />
+              </div>
+              <div class="large-4 medium-4 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="Disabled" disabled />
+              </div>
+              <div class="large-4 medium-4 columns success">
+                <label>Input Label</label>
+                <input type="text" placeholder="Success" class="success" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Select Box</label>
+                <select>
+                  <option value="husker">Husker</option>
+                  <option value="starbuck">Starbuck</option>
+                  <option value="hotdog">Hot Dog</option>
+                  <option value="apollo">Apollo</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-6 medium-6 columns">
+                <label>Choose Your Favorite</label>
+                <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
+                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+              </div>
+              <div class="large-6 medium-6 columns">
+                <label>Check these out</label>
+                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Textarea Label</label>
+                <textarea placeholder="small-12.columns"></textarea>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
