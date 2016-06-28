@@ -60,7 +60,7 @@
         <div class="row">
           <div class="large-12 columns">
             <ul class="menu row">
-              <li class="large-3 medium-3 small-12 columns">Book a tour</li>
+              <li class="large-3 medium-3 small-12 columns label">Book a tour</li>
               <li class="large-3 medium-3 small-12 columns"><input type="text" placeholder="Name"></li>
               <li class="large-3 medium-3 small-12 columns"><input type="email" placeholder="Email"></li>
               <li class="large-3 medium-3 small-12 columns"><button type="button" class="button">Submit</button></li>
@@ -72,7 +72,7 @@
 
     <!-- Left Aligned Component -->
     <div class="container left-aligned-image-text">
-      <div class="row large-collapse small-collapse">
+      <div class="row column large-collapse small-collapse">
         <div class="large-6 large-push-6 small-12 columns image">
         </div>
         <div class="large-6 large-pull-6 small-12 columns copy">
@@ -191,15 +191,52 @@
         <h3 class="title">Commitment Phobe?</h3>
         <p>We're OK with that... We've designed our spaces around things that matter most for our members.</p>
       </div>
-      <div class="row text-center">
-        <div class="large-4 small-12 columns">
-          <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+      <div class="row text-center plans">
+        <div class="large-4 small-12 columns plan">
+          <div class="inside-box">
+            <div class="inside-top">
+              <i>Icon</i>
+              <p class="">Title</p>
+              <span>Helping text</span>
+            </div>
+            <div class="price-box">
+              <span>From</span>
+              <p>£250</p>
+              <span>per month</span>
+            </div>
+            <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+            <a href="#" class="button">Book a tour</a>
+          </div>
         </div>
-        <div class="large-4 small-12 columns">
-          <p>2. If you are using fish, or a Windows shell such as Powershell/cmd.exe the above method will not work as described. Instead, see the env command’s documentation to learn how to set the environment variables for your shell.</p>
+        <div class="large-4 small-12 columns plan">
+          <div class="inside-box">
+            <div class="inside-top">
+              <i>Icon</i>
+              <p class="">Title</p>
+              <span>Helping text</span>
+            </div>
+            <div class="price-box best">
+              <span>From</span>
+              <p>£250</p>
+              <span>per month</span>
+            </div>
+            <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+            <a href="#" class="button">Book a tour</a>
+          </div>
         </div>
-        <div class="large-4 small-12 columns">
-          <p>3. This sets environment variables for the current shell that the Docker client will read which specify the TLS settings. You need to do this each time you open a new shell or restart your machine. You can now run Docker commands on this host.</p>
+        <div class="large-4 small-12 columns plan">
+          <div class="inside-box">
+            <i>Icon</i>
+            <p class="">Title</p>
+            <span>Helping text</span>
+            <div>
+              <span>From</span>
+              <p>£250</p>
+              <span>per month</span>
+            </div>
+            <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+            <a href="#" class="button">Book a tour</a>
+          </div>
         </div>
       </div>
       <div class="text-center perks">
@@ -241,26 +278,41 @@
     </div>
 
     <!-- Map Section -->
-    <div class="container wrapper row">
-      <div class="row text-center">
-        <h3 class="title">Where are we?</h3>
-      </div>
-      <div class="row text-center">
-        <div class="large-12 small-12 columns">
-
+    <div class="row column">
+      <div class="container wrapper">
+        <div class="row text-center">
+          <h3 class="title">Where are we?</h3>
         </div>
-        <div class="large-12 small-12 columns">
-          <p>Citymapper</p>
+        <div class="row text-center">
+          <div class="large-12 small-12 columns">
+            <div id="map"></div>
+            <script>
+              function initMap() {
+                var mapDiv = document.getElementById('map');
+                var map = new google.maps.Map(mapDiv, {
+                    center: {lat: 44.540, lng: -78.546},
+                    zoom: 8
+                });
+              }
+            </script>
+            <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+            </script>
+          </div>
+          <div class="large-12 small-12 columns">
+            <p>Citymapper</p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Logo Section -->
-    <div class="container wrapper row">
-      <div class="row text-center">
+    <div class="row column">
+    <div class="container wrapper">
+      <div class="large-12 small-12 columns text-center">
         <h3 class="title">Our members include</h3>
       </div>
-      <div class="row text-center">
+      <div class="row column text-center">
         <div class="large-2 large-offset-1 small-12 columns">
           <p>1. Logo</p>
         </div>
@@ -278,10 +330,11 @@
         </div>
       </div>
     </div>
+  </div>
 
     <!-- Right Aligned Component -->
     <div class="container right-aligned-image-text">
-      <div class="row large-collapse small-collapse">
+      <div class="row column large-collapse small-collapse">
         <div class="large-6 small-12 columns image">
         </div>
         <div class="large-6 small-12 columns copy">
