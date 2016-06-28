@@ -46,9 +46,8 @@
     <!-- Header Banner -->
     <div class="wrapper top-header">
       <div class="full-screen-banner"  data-img-width="2560" data-img-height="1600">
-        <span class="image-toning"></span>
-        <div class="row text-center content">
-          <div class="large-6 large-offset-3 small-12 columns">
+        <div class="row">
+          <div class="large-6 large-offset-3 small-12 columns text-center content">
             <div class="copy">
               <h1>London Fields</h1>
               <h2>The newest workspace in North London</h2>
@@ -87,99 +86,59 @@
     </div>
 
     <!-- Tabbed Promo Component -->
-    <div class="wrapper row tabbed-promo">
-      <div class="text-center tabs">
+    <div class="container wrapper">
+      <div class="row text-center tabs">
         <ul class="tabs" data-tabs id="example-tabs">
-          <li class="tabs-title is-active">
-            <a href="#panel1" aria-selected="true">
-              <i class="icon workspace">
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path stroke-linecap="round" d="M23.5 19.912c0 .877-.671 1.588-1.5 1.588h-20c-.828 0-1.5-.711-1.5-1.588v-14.824c0-.877.672-1.588 1.5-1.588h20c.829 0 1.5.711 1.5 1.588v14.824zM5 23.5h14M12 21.5v2"/><circle cx="12" cy="19.5" r=".5"/><path d="M.5 17.5h23"/></g></svg>
-              </i>
-              <h4 class="title">Shared Workspace</h4>
-            </a>
-          </li>
-          <li class="tabs-title">
-            <a href="#panel2">
-              <i class="icon meeting">
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><g><path stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M14 9.5h2v4l4-4h3.5v-9h-15v4M6 16.188v2.182l-3.941 1.41c-.944.337-1.559 1.231-1.559 2.232v1.488h15v-1.488c0-1.001-.615-1.895-1.559-2.231l-3.941-1.412v-2.307"/><ellipse stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" cx="7.901" cy="12.053" rx="3.947" ry="4.737" fill="none"/><path stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" d="M11.828 11.624l-.374.034c-1.345.259-2.208-.229-2.948-1.523-.444.851-1.832 1.523-2.973 1.523-.562 0-1.045-.115-1.528-.368" fill="none"/><path d="M20 5h-1v1h1v-1zM17 5h-1v1h1v-1zM14 5h-1v1h1v-1z"/></g></svg>
-              </i>
-              <h4 class="title">Meeting Space</h4>
-            </a>
-          </li>
-          <li class="tabs-title"><a href="#panel3">
-            <i class="icon meeting">
-              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><g><circle stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="16.5" cy="6.561" r="5" fill="none"/><path d="M23.5 5.561c-.278 0-.5.225-.5.5 0 .276.222.5.5.5.275 0 .5-.224.5-.5s-.225-.5-.5-.5z"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M23.5 23.5v-16"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M16.688 21.516c-1.412 0-2.559-1.146-2.559-2.56 0-2.644-3.108-3.212-4.479-1.729-1.368-1.482-4.479-.914-4.479 1.729 0 1.414-1.146 2.56-2.559 2.56-.881 0-1.654-.443-2.114-1.12 1.921 4.314 7.298 3.515 9.151.665 1.853 2.85 7.23 3.649 9.153-.665-.459.676-1.233 1.12-2.114 1.12zM19.5 6.561c0 1.658-1.345 3-3 3" fill="none"/></g></svg>
-            </i>
-            <h4 class="title">Mood Boards</h4></a></li>
+          <li class="tabs-title is-active"><a href="#panel1" aria-selected="true"><h4 class="title">Shared Workspace</h4></a></li>
+          <li class="tabs-title"><a href="#panel2"><h4 class="title">Meeting Space</h4></a></li>
+          <li class="tabs-title"><a href="#panel3"><h4 class="title">Mood Boards</h4></a></li>
         </ul>
       </div>
-      <div class="text-center tabs-content" data-tabs-content="example-tabs">
+      <div class="row text-center tabs-content" data-tabs-content="example-tabs">
         <div class="large-12 small-12 columns tabs-panel is-active" id="panel1">
           <div class="row">
             <div class="primary callout large-4 large-push-7">
-              <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
-              <a href="#" class="button">Come and see</a>
+              <div class="">
+                <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+                <a href="#" class="button">Come and see</a>
+              </div>
             </div>
           </div>
         </div>
         <div class="large-12 small-12 columns tabs-panel" id="panel2">
-          <div class="row">
-            <div class="primary callout large-4 large-push-7">
-              <p>2. If you are using fish, or a Windows shell such as Powershell/cmd.exe the above method will not work as described. Instead, see the env command’s documentation to learn how to set the environment variables for your shell.</p>
-              <a href="#" class="button">Let it go</a>
-            </div>
-          </div>
+          <p>2. If you are using fish, or a Windows shell such as Powershell/cmd.exe the above method will not work as described. Instead, see the env command’s documentation to learn how to set the environment variables for your shell.</p>
+          <a href="#" class="button">Let it go</a>
         </div>
         <div class="large-12 small-12 columns tabs-panel" id="panel3">
-          <div class="row">
-            <div class="primary callout large-4 large-push-7">
-              <p>3. This sets environment variables for the current shell that the Docker client will read which specify the TLS settings. You need to do this each time you open a new shell or restart your machine. You can now run Docker commands on this host.</p>
-              <a href="#" class="button">Don't panic</a>
-            </div>
-          </div>
+          <p>3. This sets environment variables for the current shell that the Docker client will read which specify the TLS settings. You need to do this each time you open a new shell or restart your machine. You can now run Docker commands on this host.</p>
+          <a href="#" class="button">Don't panic</a>
         </div>
       </div>
     </div>
 
     <!-- Value Component -->
-    <div class="container wrapper value">
+    <div class="container wrapper">
       <div class="row text-center">
-        <div class="large-12 small-12 columns">
-          <h3 class="title">Everything you need</h3>
-          <p>We've designed our spaces around things that matter most for our members.</p>
-      </div>
+        <h3 class="title">Everything you need</h3>
+        <p>We've designed our spaces around things that matter most for our members.</p>
       </div>
       <div class="row text-center">
         <div class="large-4 small-12 columns">
-          <i class="icon wifi"><img src="images/backpack.svg" /></i>
-          <h4>Free Wifi</h4>
           <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
         </div>
         <div class="large-4 small-12 columns">
-          <i class="icon chair"><img src="images/book.svg" /></i>
-          <h4>Happy Bums</h4>
           <p>2. If you are using fish, or a Windows shell such as Powershell/cmd.exe the above method will not work as described. Instead, see the env command’s documentation to learn how to set the environment variables for your shell.</p>
         </div>
         <div class="large-4 small-12 columns">
-          <i class="icon refill"><img src="images/coffee-machine.svg" /></i>
-          <h4>Free Refills</h4>
           <p>3. This sets environment variables for the current shell that the Docker client will read which specify the TLS settings. You need to do this each time you open a new shell or restart your machine. You can now run Docker commands on this host.</p>
         </div>
-      </div>
-      <div class="row text-center">
         <div class="large-4 small-12 columns">
-          <i class="icon phone"><img src="images/bubble-chat.svg" /></i>
-          <h4>Free Refills</h4>
           <p>4. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
         </div>
         <div class="large-4 small-12 columns">
-          <i class="icon presentation"><img src="images/bomb.svg" /></i>
-          <h4>Free Refills</h4>
           <p>5. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
         </div>
         <div class="large-4 small-12 columns">
-          <i class="icon check"><img src="images/clock.svg" /></i>
-          <h4>Free Refills</h4>
           <p>6. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
         </div>
       </div>
@@ -202,61 +161,13 @@
           <p>3. This sets environment variables for the current shell that the Docker client will read which specify the TLS settings. You need to do this each time you open a new shell or restart your machine. You can now run Docker commands on this host.</p>
         </div>
       </div>
-      <div class="text-center perks">
-          <h3 class="title">Perks</h3>
-      </div>
-      <div class="row text-center perks">
-        <div class="large-10 large-centered small-12 columns">
-          <div class="row table">
-            <div class="large-4 columns">
-              <ul>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-              </ul>
-            </div>
-            <div class="large-4 columns">
-              <ul>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-              </ul>
-            </div>
-            <div class="large-4 columns">
-              <ul>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
+      <div class="row perks">
 
-    <!-- Map Section -->
-    <div class="container wrapper row">
-      <div class="row text-center">
-        <h3 class="title">Where are we?</h3>
-      </div>
-      <div class="row text-center">
-        <div class="large-12 small-12 columns">
-
-        </div>
-        <div class="large-12 small-12 columns">
-          <p>Citymapper</p>
-        </div>
       </div>
     </div>
 
     <!-- Logo Section -->
-    <div class="container wrapper row">
+    <div class="container wrapper">
       <div class="row text-center">
         <h3 class="title">Our members include</h3>
       </div>
@@ -285,9 +196,8 @@
         <div class="large-6 small-12 columns image">
         </div>
         <div class="large-6 small-12 columns copy">
-          <div class="primary callout row text-center">
+          <div class="primary callout row">
             <div class="large-10 large-offset-1 ">
-              <i class="icon meeting"></i>
               <h3 class="title">Need a meeting room?</h3>
               <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
               <a href="#" class="button">See the rooms</a>
@@ -297,19 +207,129 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-      <div class="row">
-        <div class="large-12 small-12 columns">
-          <ul>
-            <li><a href="#">Benefits</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Press</a></li>
-          </ul>
+
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <h5>Form UI</h5>
+        <div class="callout">
+          <h5>Form UI Light</h5>
+          <form>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-12.columns" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-4 medium-4 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-4.columns" />
+              </div>
+              <div class="large-4 medium-4 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-4.columns" disabled class="disabled" />
+              </div>
+              <div class="large-4 medium-4 columns">
+                <div class="row collapse">
+                  <label>Input Label</label>
+                  <div class="input-group">
+                    <input type="text" placeholder="small-9.columns" class="input-group-field" />
+                    <span class="input-group-label">.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Select Box</label>
+                <select>
+                  <option value="husker">Husker</option>
+                  <option value="starbuck">Starbuck</option>
+                  <option value="hotdog">Hot Dog</option>
+                  <option value="apollo">Apollo</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-6 medium-6 columns">
+                <label>Choose Your Favorite</label>
+                <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
+                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+              </div>
+              <div class="large-6 medium-6 columns">
+                <label>Check these out</label>
+                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Textarea Label</label>
+                <textarea placeholder="small-12.columns"></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="primary callout">
+          <h5>Form UI Dark</h5>
+          <form data-abide>
+            <div class="row">
+              <div class="large-6 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-12.columns" />
+              </div>
+              <div class="large-6 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-12.columns" focus />
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-4 medium-4 columns error">
+                <label>Input Label</label>
+                <input type="text" placeholder="Error" class="is-invalid-input" required />
+              </div>
+              <div class="large-4 medium-4 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="Disabled" disabled />
+              </div>
+              <div class="large-4 medium-4 columns success">
+                <label>Input Label</label>
+                <input type="text" placeholder="Success" class="success" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Select Box</label>
+                <select>
+                  <option value="husker">Husker</option>
+                  <option value="starbuck">Starbuck</option>
+                  <option value="hotdog">Hot Dog</option>
+                  <option value="apollo">Apollo</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-6 medium-6 columns">
+                <label>Choose Your Favorite</label>
+                <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
+                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+              </div>
+              <div class="large-6 medium-6 columns">
+                <label>Check these out</label>
+                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Textarea Label</label>
+                <textarea placeholder="small-12.columns"></textarea>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-    </footer>
+    </div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/what-input.js"></script>
