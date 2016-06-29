@@ -235,7 +235,12 @@ textarea[readonly] {
 }
 .perks {
 	table {
+		border-radius: 10px;
+		border: 1px solid;
 		color: $body-font-color-dark;
+		thead, tr, td {
+			border-collapse: separate;
+		}
 	}
 }
 
@@ -397,10 +402,13 @@ textarea[readonly] {
 
 footer {
 	background: map-get($foundation-palette, aubergine);
+	font-family: $header-font-family;
+}
+footer * {
+	color: rgba($white, .4);
 }
 
-
-/* Icon 1 */
+/* Burger Icon */
 
 #mobile-nav-icon {
   width: 30px;
