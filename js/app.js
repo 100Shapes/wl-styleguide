@@ -53,3 +53,59 @@ function backgroundResize(){
 $(window).resize(backgroundResize);
 $(window).focus(backgroundResize);
 backgroundResize();
+
+
+// Burger menu animation
+$(document).ready(function(){
+    $('#mobile-nav-icon').click(function(){
+        $(this).toggleClass('open');
+    });
+});
+
+// Dropdown navigation menu
+
+/* $(document).ready(function() {
+
+	// Add classes for parent items
+    console.log($('.dropdown.menu li a').data('id'));
+    $('.dropdown.menu li').each(function() {
+        if ($(this).find('a').data('id')) {
+            $(this).addClass('is-dropdown-submenu-parent');
+        }
+    });
+	if (!$('.dropdown.menu li a').data('id')) {
+		$(this).addClass('is-dropdown-submenu-parent');
+	}
+    //variable where currentAnchor is stored
+    var currentSection = 0;
+    // hides the submenu as soon as the DOM is ready
+    $('.subnav-container').hide();
+    // toggles the submenu on clicking the noted link  
+    $('.dropdown.menu li a.link').click(function() {
+ 
+        // remove active class
+        $('.dropdown.menu li a.link').removeClass('active');
+        // add active class
+        $(this).addClass('active');
+        
+        var href = $(this).attr('href');
+        //hide all submenus
+        $('#hidden>ul').hide();
+        
+        //show one particular menu
+        $(href).show();
+
+        
+        //logic for hiding and showing submenu
+        if(currentSection == 0){
+            $('.subnav-container').slideToggle(200);
+            currentSection = href;
+        } else if (currentSection == href) {
+             $('.subnav-container').slideToggle(200);
+             currentSection = 0;    
+        } else {
+            currentSection = href;
+        }
+        return false;     		
+    });
+}); */

@@ -11,26 +11,32 @@
     <!-- Top Bar -->
     <div class="top-bar">
       <div class="top-bar-title">
-        <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-          <button class="menu-icon dark" type="button" data-toggle></button>
-        </span>
         <strong>Work.Life</strong>
       </div>
+      <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="burger-menu">
+        <div id="mobile-nav-icon" type="button" data-toggle>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </span>
       <div id="responsive-menu">
         <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu data-disable-hover="true" data-click-open="true">
+          <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu data-disable-hover="true" data-click-open="true">
             <li>
-              <a href="#">Locations</a>
-              <ul class="menu vertical">
-                <li><a href="#">One</a></li>
-                <li><a href="#">Two</a></li>
+              <a href="#subnav1" class="link" data-id="subnav1">Locations</a>
+              <ul id="subnav1" class="menu">
+                <li><a href="#">Camden</a></li>
+                <li><a href="#">London Fields</a></li>
               </ul>
             </li>
             <li>
-              <a href="#">Perfect For</a>
-              <ul class="menu vertical">
-                <li><a href="#">One</a></li>
-                <li><a href="#">Two</a></li>
+              <a href="#subnav2" class="link" data-id="subnav2">Perfect For</a>
+              <ul id="subnav2" class="menu">
+                <li><a href="#">Freelancer</a></li>
+                <li><a href="#">Resident</a></li>
+                <li><a href="#">Permanent</a></li>
               </ul>
             </li>
             <li><a href="#">Pricing</a></li>
@@ -38,16 +44,16 @@
             <li><a href="#">Meeting Rooms</a></li>
           </ul>
         </div>
-      </div>
-      <div class="top-bar-right">
-        <a href="#" class="button">Book a Tour</a>
+        <div class="top-bar-right text-center">
+          <a href="#" class="button">Book a Tour</a>
+        </div>
       </div>
     </div>
     <!-- Header Banner -->
     <div class="wrapper top-header">
       <div class="full-screen-banner"  data-img-width="2560" data-img-height="1600">
         <span class="image-toning"></span>
-        <div class="row text-center content">
+        <div class="row column text-center content">
           <div class="large-6 large-offset-3 small-12 columns">
             <div class="copy">
               <h1>London Fields</h1>
@@ -55,16 +61,16 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="slim-full-width-form">
-        <div class="row">
-          <div class="large-12 columns">
-            <ul class="menu row">
-              <li class="large-3 medium-3 small-12 columns label">Book a tour</li>
-              <li class="large-3 medium-3 small-12 columns"><input type="text" placeholder="Name"></li>
-              <li class="large-3 medium-3 small-12 columns"><input type="email" placeholder="Email"></li>
-              <li class="large-3 medium-3 small-12 columns"><button type="button" class="button">Submit</button></li>
-            </ul>
+        <div class="slim-full-width-form">
+          <div class="row">
+            <div class="small-12 columns">
+              <ul class="row slim-form no-bullet">
+                <li class="large-2 large-offset-1 medium-3 small-12 columns form-label">Book a tour</li>
+                <li class="large-3 medium-3 small-12 columns"><input type="text" placeholder="Name"></li>
+                <li class="large-3 medium-3 small-12 columns"><input type="email" placeholder="Email"></li>
+                <li class="large-2 end medium-3 small-12 columns"><button type="button" class="button">Submit</button></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -243,37 +249,48 @@
           <h3 class="title">Perks</h3>
       </div>
       <div class="row text-center perks">
-        <div class="large-10 large-centered small-12 columns">
-          <div class="row table">
-            <div class="large-4 columns">
-              <ul>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-              </ul>
-            </div>
-            <div class="large-4 columns">
-              <ul>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-              </ul>
-            </div>
-            <div class="large-4 columns">
-              <ul>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-                <li>Content here</li>
-              </ul>
-            </div>
-          </div>
+        <div class="large-12 large-centered small-12 columns">
+          <table class="stack">
+            <tbody>
+              <tr class="row">
+                <td class="large-4 columns">Content Goes Here</td>
+                <td class="large-4 columns">This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                <td class="large-4 columns">Content Goes Here</td>
+              </tr>
+              <tr class="row">
+                <td class="large-4 columns">Content Goes Here</td>
+                <td class="large-4 columns">This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                <td class="large-4 columns">Content Goes Here</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+      <div class="text-center perks">
+          <h3 class="title">Fun</h3>
+      </div>
+      <div class="row text-center perks">
+        <div class="large-12 large-centered small-12 columns">
+          <table class="stack">
+            <tbody>
+              <tr class="row">
+                <td class="large-4 columns">Content Goes Here</td>
+                <td class="large-4 columns">This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                <td class="large-4 columns">Content Goes Here</td>
+              </tr>
+              <tr class="row">
+                <td class="large-4 columns">Content Goes Here</td>
+                <td class="large-4 columns">This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                <td class="large-4 columns">Content Goes Here</td>
+              </tr>
+              <tr class="row">
+                <td class="large-4 columns">Content Goes Here</td>
+                <td class="large-4 columns">This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                <td class="large-4 columns">Content Goes Here</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 

@@ -244,7 +244,7 @@ $breadcrumbs-item-slash: true;
 // 11. Button
 // ----------
 
-$button-padding: 1em 1.25em;
+$button-padding: 1em 2.25em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: map-get($foundation-palette, camden-orange);
@@ -371,7 +371,7 @@ $input-radius: $global-radius;
 // 20. Label
 // ---------
 
-$label-background: map-get($foundation-palette, aubergine);
+$label-background: transparent;
 $label-color: foreground($label-background);
 $label-font-size: 0.8rem;
 $label-padding: 0.33333rem 0.5rem;
