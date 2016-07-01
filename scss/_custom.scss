@@ -39,14 +39,14 @@ textarea[readonly] {
 // Sections
 .container {
 	margin-bottom: 2.5em;
-	padding: 2.5em 0 2em;	
+	padding: 2.5em 0 2em;
 }
 
 .wrapper {
 	border-radius: $global-radius;
-	background-color: $white; 
+	background-color: $white;
 	&.primary {
-		background-color: map-get($foundation-palette, aubergine); 
+		background-color: map-get($foundation-palette, aubergine);
 		color: $white;
 	}
 	&.top-header {
@@ -198,9 +198,6 @@ textarea[readonly] {
 	}
 }
 
-.value {
-
-}
 .plans {
 	margin-bottom: $global-margin;
 	@include breakpoint (large) {
@@ -226,7 +223,7 @@ textarea[readonly] {
 				right: -2px;
 				left: -2px;
 				top: 125px;
-				&.best {
+				&.highlight {
 					background: map-get($foundation-palette, light-orange);
 				}
 			}
@@ -329,7 +326,7 @@ textarea[readonly] {
 }
 
 // Tabs
-.tabbed-promo {
+.tabbed {
 	margin-bottom: 2.5em;
 	.tabs {
 		display: flex;
@@ -387,7 +384,7 @@ textarea[readonly] {
 		}
 		#panel1 {
 			background-image: url(../images/beach-2.jpg);
-			
+
 		}
 		#panel2 {
 			background-image: url(../images/beach-1.jpg);
@@ -398,7 +395,7 @@ textarea[readonly] {
 	}
 }
 
-// Footer 
+// Footer
 
 footer {
 	background: map-get($foundation-palette, aubergine);
