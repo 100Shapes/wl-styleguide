@@ -20,7 +20,8 @@ textarea[readonly] {
 }
 
 .fields {
-	.title {
+	.title,
+	.container-title {
 		color: map-get($foundation-palette, field-green);
 	}
 }
@@ -28,7 +29,7 @@ textarea[readonly] {
 .icon {
 	display: block;
 	text-align: center;
-	margin: 0 0 1em;
+	margin: 0 0 $global-margin;
 	img {
 		width: auto;
 		height: 50px;
@@ -38,8 +39,9 @@ textarea[readonly] {
 
 // Sections
 .container {
-	margin-bottom: 2.5em;
+	margin-bottom: ($global-margin * 2);
 	padding: 2.5em 0 2em;
+	position: relative;
 }
 
 .wrapper {
@@ -90,11 +92,12 @@ textarea[readonly] {
 		.slim-full-width-form {
 			background-color: map-get($foundation-palette, field-green);
 			padding: 1em 0;
-			@include breakpoint(small only) {
-				margin: 0 1em 1em;
+			@include breakpoint(medium down) {
+				margin: 0 $global-margin $global-margin;
+				border-radius: $global-radius;
 			}
 			.slim-form {
-				@include breakpoint(medium) {
+				@include breakpoint(large) {
 					display: -ms-flexbox;
 					display: -webkit-flex;
 					display: flex;
@@ -126,9 +129,15 @@ textarea[readonly] {
 	}
 	.callout {
 		border-radius: $global-radius 0 0 $global-radius;
+		@include breakpoint (medium down) {
+			border-radius: 0 0 $global-radius $global-radius;
+		}
 	}
 	.copy {
 		padding: 1em 0;
+		@include breakpoint (medium down) {
+			padding-top: 0;
+		}
 	}
 	.image {
 		background-image: url(../images/beach-house.jpg);
@@ -240,7 +249,16 @@ textarea[readonly] {
 		}
 	}
 }
-
+.map {
+	.citymapper {
+		position: absolute;
+		bottom: 0;
+		background: map-get($foundation-palette, aubergine);
+		right: 0;
+		left: 0;
+		border-radius: 0 0 $global-radius $global-radius;
+	}
+}
 #map {
    width: 100%;
    height: 400px;
@@ -251,14 +269,47 @@ textarea[readonly] {
 
 .top-bar {
 	position: relative;
+	> * {
+		line-height: 3em;
+	}
+	.top-bar-title {
+		img {
+			max-width: 180px;
+			height: auto;
+		}
+		@include breakpoint(medium only) {
+			width: 100%;
+			text-align: center;
+			margin-bottom: 1em;
+		}
+	}
 	.burger-menu {
 		float: right;
 	}
 	.top-bar-left {
+		@include breakpoint(small only) {
+			margin-bottom: $global-margin;
+		}
+		@include breakpoint(medium only) {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 1em;
+		}
 		a {
 			color: map-get($foundation-palette, light-orange);
 			font-family: $header-font-family;
 			text-transform: uppercase;
+		}
+	}
+	.top-bar-right {
+		@include breakpoint(medium only) {
+			width: 100%;
+			text-align: center;
+			margin-bottom: 1em;
+		}
+		@include breakpoint(small only) {
+			margin-bottom: 1.25em;
 		}
 	}
 	.subnav-container {
@@ -273,8 +324,24 @@ textarea[readonly] {
 	.submenu {
 		a {
 			@include breakpoint(medium) {
-				padding: 5em 2.5em;
-				background: white;
+				padding: 21% 2.5em;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				-webkit-background-size: cover;
+				background-size: cover;
+				position: relative;
+				background-position: 50% 50%;
+				/* ie8- graceful degradation */
+				background-position:50% 50%9 !important;
+				width: 100%;
+				height:100%;
+				overflow:hidden;
+				&.camden {
+					background-image: url(../images/camden-beach.jpg);
+				}
+				&.fields {
+					background-image: url(../images/london-fields-beach.jpg);
+				}
 			}
 		}
 		@include breakpoint(medium) {
@@ -298,6 +365,12 @@ textarea[readonly] {
 			pointer-events: none;
 			cursor: default;
 			color: $white;
+			padding-right: 1rem;
+		}
+	}
+	.dropdown.menu.vertical>li.opens-right>a:after {
+		@include breakpoint(small only) {
+			display: none;
 		}
 	}
 	.dropdown.menu {
@@ -335,11 +408,31 @@ textarea[readonly] {
 
 // Tabs
 .tabbed {
-	margin-bottom: 2.5em;
+	margin-bottom: ($global-margin * 2);
+	&.wrapper {
+		border-radius: 0;
+	}
+	@include breakpoint(medium down) {
+		background: map-get($foundation-palette, aubergine);
+		padding-top: 2.5em;
+	}
+	.container-title {
+		@include breakpoint(large) {
+			display: none;
+		}
+	}
+	.tabs-mobile {
+		@include breakpoint (large) {
+			display: none;
+		}
+	}
 	.tabs {
-		display: flex;
-		justify-content: center;
-		flex: 1 100%;
+		@include breakpoint(large) {
+			display: flex;
+			justify-content: center;
+			flex: 1 100%;
+		}
+		display: none;
 		.tabs-title {
 			flex: 1;
 			&.is-active {
@@ -355,8 +448,13 @@ textarea[readonly] {
 				}
 			}
 			a {
-				& > * {
+				> * {
 					margin: 0;
+				}
+				.icon {
+					@include breakpoint(small only) {
+						display: none;
+					}
 				}
 				svg path,
 				svg circle,
@@ -377,19 +475,40 @@ textarea[readonly] {
 		}
 	}
 	.tabs-content {
+		border: 0;
 		.tabs-panel {
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			-webkit-background-size: cover;
-			background-size: cover;
-			position: relative;
-			background-position: 50% 50%;
-			/* ie8- graceful degradation */
-			background-position:50% 50%9 !important;
-			width: 100%;
-			height:100%;
-			overflow:hidden;
+			@include breakpoint(medium down) {
+				padding: 0;
+			}
+			@include breakpoint(large) {
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				-webkit-background-size: cover;
+				background-size: cover;
+				position: relative;
+				background-position: 50% 50%;
+				/* ie8- graceful degradation */
+				background-position:50% 50%9 !important;
+				width: 100%;
+				height:100%;
+				overflow:hidden;
+			}
+			.callout {
+				@include breakpoint(medium down) {
+					border-radius: 0;
+					padding-bottom: ($global-padding * 2);
+				}
+				.image {
+					@include breakpoint(medium down) {
+						margin-bottom: $global-padding;
+					}
+					@include breakpoint(large) {
+						display: none;
+					}
+				}
+			}
 		}
+		
 		#panel1 {
 			background-image: url(../images/beach-2.jpg);
 
@@ -482,4 +601,161 @@ footer * {
   top: 18px;
   width: 0%;
   left: 50%;
+}
+
+/* Fancy Select */
+div.fancy-select {
+	position: relative;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: map-get($foundation-palette, aubergine);
+}
+
+div.fancy-select.disabled {
+	opacity: 0.5;
+}
+
+div.fancy-select select:focus + div.trigger {
+	box-shadow: 0 0 0 2px #4B5468;
+}
+
+div.fancy-select select:focus + div.trigger.open {
+	box-shadow: none;
+}
+
+div.fancy-select div.trigger {
+	border-radius: 4px;
+	cursor: pointer;
+	padding: $global-padding;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
+	background: $white;
+	color: map-get($foundation-palette, aubergine);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	width: 100%;
+
+	transition: all 240ms ease-out;
+	-webkit-transition: all 240ms ease-out;
+	-moz-transition: all 240ms ease-out;
+	-ms-transition: all 240ms ease-out;
+	-o-transition: all 240ms ease-out;
+}
+
+div.fancy-select div.trigger:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 8px solid transparent;
+	border-top-color: map-get($foundation-palette, aubergine);
+	top: 28px;
+	right: 21px;
+}
+div.fancy-select .options.open li.selected:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 8px solid transparent;
+	border-bottom-color: map-get($foundation-palette, aubergine);
+	top: 19px;
+	right: 21px;
+	transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.fancy-select div.trigger.open {
+	background: $white;
+	box-shadow: none;
+}
+
+div.fancy-select div.trigger.open:after {
+	border-top-color: map-get($foundation-palette, aubergine);
+}
+div.fancy-select .options.open li.selected:after {
+	border-bottom-color: map-get($foundation-palette, aubergine);
+}
+
+div.fancy-select ul.options {
+	list-style: none;
+	margin: 0;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 50;
+	max-height: 200px;
+	overflow: auto;
+	background: $white;
+	border-radius: $global-radius;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	min-width: 100%;
+
+	transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.fancy-select ul.options.open {
+	visibility: visible;
+	top: 0px;
+	opacity: 1;
+
+	transition: opacity 300ms ease-out, top 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, top 300ms ease-out;
+}
+
+div.fancy-select ul.options.overflowing {
+	top: auto;
+	bottom: 40px;
+
+	transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.fancy-select ul.options.overflowing.open {
+	top: auto;
+	bottom: 50px;
+
+	transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+}
+
+div.fancy-select ul.options li {
+	padding: $global-padding;
+	color: map-get($foundation-palette, field-green);
+	cursor: pointer;
+	white-space: nowrap;
+
+	transition: all 150ms ease-out;
+	-webkit-transition: all 150ms ease-out;
+	-moz-transition: all 150ms ease-out;
+	-ms-transition: all 150ms ease-out;
+	-o-transition: all 150ms ease-out;
+}
+
+div.fancy-select ul.options li.selected {
+	background: $light-gray;
+	color: map-get($foundation-palette, aubergine);
+	cursor: default;
+	position: relative;
 }

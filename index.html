@@ -11,7 +11,7 @@
     <!-- Top Bar -->
     <div class="top-bar">
       <div class="top-bar-title">
-        <strong>Work.Life</strong>
+        <a href="#"><img src="images/wl-logo-white.png" /></a>
       </div>
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="burger-menu">
         <div id="mobile-nav-icon" type="button" data-toggle>
@@ -28,8 +28,8 @@
               <a href="#subnav1" class="link" data-id="subnav1">Locations</a>
               <ul id="subnav1" class="expanded row column">
                 <ul class="menu menu-centered">
-                  <li class="large-4 large-offset-2 columns"><a href="#">Camden</a></li>
-                  <li class="large-4 columns end"><a href="#">London Fields</a></li>
+                  <li class="large-4 large-offset-2 columns"><a href="#" class="camden">Camden</a></li>
+                  <li class="large-4 columns end"><a href="#" class="fields">London Fields</a></li>
                 </ul>
               </ul>
             </li>
@@ -37,9 +37,9 @@
               <a href="#subnav2" class="link" data-id="subnav2">Perfect For</a>
               <ul id="subnav2" class="expanded row column">
                 <ul class="menu menu-centered">
-                  <li class="large-4 columns"><a href="#">Freelancer</a></li>
-                  <li class="large-4 columns"><a href="#">Resident</a></li>
-                  <li class="large-4 columns"><a href="#">Permanent</a></li>
+                  <li class="large-4 columns"><a href="#" class="freelancer">Freelancer</a></li>
+                  <li class="large-4 columns"><a href="#" class="resident">Resident</a></li>
+                  <li class="large-4 columns"><a href="#" class="permanent">Permanent</a></li>
                 </ul>
             </ul>
             </li>
@@ -69,10 +69,10 @@
           <div class="row">
             <div class="small-12 columns">
               <ul class="row slim-form no-bullet">
-                <li class="large-2 large-offset-1 medium-3 small-12 columns form-label">Book a tour</li>
-                <li class="large-3 medium-3 small-12 columns"><input type="text" placeholder="Name"></li>
-                <li class="large-3 medium-3 small-12 columns"><input type="email" placeholder="Email"></li>
-                <li class="large-2 end medium-3 small-12 columns"><button type="button" class="button">Submit</button></li>
+                <li class="large-2 large-offset-1 medium-12 small-12 columns form-label">Book a tour</li>
+                <li class="large-3 medium-12 small-12 columns"><input type="text" placeholder="Name"></li>
+                <li class="large-3 medium-12 small-12 columns"><input type="email" placeholder="Email"></li>
+                <li class="large-2 end medium-12 small-12 columns"><button type="button" class="button">Submit</button></li>
               </ul>
             </div>
           </div>
@@ -99,6 +99,14 @@
     <!-- Tabbed Promo Component -->
     <div class="wrapper row tabbed">
       <div class="text-center">
+        <h3 class="container-title">Features of space</h3>
+        <div class="tabs-mobile medium-12 columns">
+          <select class="mobile-select">
+            <option>Shared Workspace</option>
+            <option>Meeting Space</option>
+            <option>Mood Boards</option>
+          </select>
+        </div>
         <ul class="tabs" data-tabs id="example-tabs">
           <li class="tabs-title is-active">
             <a href="#panel1" aria-selected="true">
@@ -125,24 +133,27 @@
       </div>
       <div class="text-center tabs-content" data-tabs-content="example-tabs">
         <div class="large-12 small-12 columns tabs-panel is-active" id="panel1">
-          <div class="row">
-            <div class="primary callout large-4 large-push-7">
+          <div class="row column">
+            <div class="primary callout large-4 large-push-7 columns">
+              <img src="images/beach-2.jpg" class="image" />
               <p>1. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid. Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
               <a href="#" class="button">Come and see</a>
             </div>
           </div>
         </div>
         <div class="large-12 small-12 columns tabs-panel" id="panel2">
-          <div class="row">
-            <div class="primary callout large-4 large-push-7">
+          <div class="row column">
+            <div class="primary callout large-4 large-push-7 columns">
+              <img src="images/beach-1.jpg" class="image" />
               <p>2. If you are using fish, or a Windows shell such as Powershell/cmd.exe the above method will not work as described. Instead, see the env command’s documentation to learn how to set the environment variables for your shell.</p>
               <a href="#" class="button">Let it go</a>
             </div>
           </div>
         </div>
         <div class="large-12 small-12 columns tabs-panel" id="panel3">
-          <div class="row">
-            <div class="primary callout large-4 large-push-7">
+          <div class="row column">
+            <div class="primary callout large-4 large-push-7 columns">
+              <img src="images/beach-3.jpg" class="image" />
               <p>3. This sets environment variables for the current shell that the Docker client will read which specify the TLS settings. You need to do this each time you open a new shell or restart your machine. You can now run Docker commands on this host.</p>
               <a href="#" class="button">Don't panic</a>
             </div>
@@ -225,7 +236,7 @@
               <p class="">Title</p>
               <span>Helping text</span>
             </div>
-            <div class="price-box best">
+            <div class="price-box highlight">
               <span>From</span>
               <p>£250</p>
               <span>per month</span>
@@ -299,7 +310,7 @@
     </div>
 
     <!-- Map Section -->
-    <div class="row column">
+    <div class="row column map">
       <div class="container wrapper">
         <div class="row text-center">
           <h3 class="title">Where are we?</h3>
@@ -320,7 +331,7 @@
                 src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
             </script>
           </div>
-          <div class="large-12 small-12 columns">
+          <div class="large-12 small-12 columns citymapper">
             <p>Citymapper</p>
           </div>
         </div>
@@ -389,5 +400,6 @@
     <script src="bower_components/what-input/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/foundation.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/fancySelect.js"></script>
   </body>
 </html>

@@ -62,6 +62,11 @@ $(document).ready(function(){
     });
 });
 
+// Fancy Select
+$(document).ready(function(){
+    $('.mobile-select').fancySelect();
+});
+
 // Dropdown navigation menu
 
 /* $(document).ready(function() {
