@@ -186,7 +186,7 @@ textarea[readonly] {
 			width: auto;
 			height:100%;
 			position: absolute;
-			right: 0;
+			right: 1em;
 			top: 0;
 			bottom: 0;
 			padding-top: 0;
@@ -228,13 +228,14 @@ textarea[readonly] {
 			padding-top: 58.6%;
 		}
 		@include breakpoint(large) {
-			width: 50%;
+			width: auto;
 			height:100%;
 			position: absolute;
-			left: 0;
+			left: 1em;
 			top: 0;
 			bottom: 0;
 			padding-top: 0;
+			right: 50%;
 		}
 	}
 }
@@ -358,7 +359,15 @@ textarea[readonly] {
 		}
 	}
 }
-.map {
+.location {
+	.map {
+		@include breakpoint(large) {
+			padding-bottom: 2em;
+		}
+		@include breakpoint(medium down) {
+			padding-bottom: 9em;
+		}
+	}
 	.citymapper {
 		position: absolute;
 		bottom: 0;
@@ -370,10 +379,24 @@ textarea[readonly] {
 		font-weight: $global-weight-bold;
 		padding-top: $global-padding;
 		padding-bottom: $global-padding;
-		@include breakpoint(medium down) {
-			span {
+		span {
+			line-height: 2em;
+			@include breakpoint(medium down) {
 				display: block;
 				text-align: center;
+			}
+		}
+		.image {
+			@include breakpoint(large) {
+				float: right;
+			}
+			@include breakpoint(medium down) {
+				padding-top: 1em;
+			}
+			&:after {
+				display: table;
+				clear: both;
+				content: '';
 			}
 		}
 	}
@@ -395,11 +418,6 @@ textarea[readonly] {
 		img {
 			max-width: 180px;
 			height: auto;
-		}
-		@include breakpoint(medium only) {
-			width: 100%;
-			text-align: center;
-			margin-bottom: 1em;
 		}
 	}
 	.burger-menu {
@@ -645,10 +663,39 @@ textarea[readonly] {
 
 footer {
 	background: map-get($foundation-palette, aubergine);
-	font-family: $header-font-family;
-}
-footer * {
+	font-family: $body-font-family;
+	font-weight: $global-weight-normal;
 	color: rgba($white, .4);
+	@include breakpoint(medium down) {
+		text-align: center;
+		padding-top: $global-padding;
+	}
+	a {
+		color: rgba($white, .4);
+		font-weight: $global-weight-bold;
+	}
+	.logo {
+		line-height: 3em;
+		@include breakpoint(large) {
+			float: left;
+		}
+		img {
+			margin: 0 $global-margin;
+			opacity: .4;
+			@include breakpoint(medium down) {
+				display: none;
+			}
+		}
+	}
+	.menu {
+		@include breakpoint(large) {
+			float: right;
+		}
+		@include breakpoint(medium down) {
+			display: flex;
+			justify-content: center;
+		}
+	}
 }
 
 /* Burger Icon */
