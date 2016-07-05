@@ -156,7 +156,7 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 1px solid $bg-gray;
+$hr-border: 1px solid map-get($foundation-palette, aubergine);
 $hr-margin: rem-calc(20) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
@@ -225,9 +225,9 @@ $accordionmenu-arrow-color: $primary-color;
 
 $badge-background: map-get($foundation-palette, aubergine);
 $badge-color: foreground($badge-background);
-$badge-padding: 0.3em;
+$badge-padding: 0;
 $badge-minwidth: 2.1em;
-$badge-font-size: 0.6rem;
+$badge-font-size: 1rem;
 
 // 10. Breadcrumbs
 // ---------------
@@ -502,19 +502,18 @@ $switch-paddle-transition: all 0.25s ease-out;
 
 // 31. Table
 // ---------
-
-$table-background: $white;
+$table-hover-scale: 5%;
+$table-background: rgba($white, 0);
 $table-color-scale: 5%;
 $table-border: 1px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);
-$table-hover-scale: 2%;
-$table-row-hover: darken($table-background, $table-hover-scale);
+$table-row-hover: lighten($table-background, $table-hover-scale);
 $table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
-$table-striped-background: smart-scale($table-background, $table-color-scale);
+$table-striped-background: rgba($white, .2);
 $table-stripe: even;
 $table-head-background: smart-scale($table-background, $table-color-scale / 2);
 $table-foot-background: smart-scale($table-background, $table-color-scale);
-$table-head-font-color: $body-font-color-dark;
+$table-head-font-color: $white;
 $show-header-for-stacked: false;
 
 // 32. Tabs

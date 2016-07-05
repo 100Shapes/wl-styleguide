@@ -18,11 +18,32 @@ textarea:disabled,
 textarea[readonly] {
 	border-color: $bg-gray;
 }
-
 .fields {
 	.title,
 	.container-title {
 		color: map-get($foundation-palette, field-green);
+	}
+	.left-aligned-image-text,
+	.right-aligned-image-text {
+		.icon {
+			svg path,
+			svg ellipsis,
+			svg circle {
+				stroke: map-get($foundation-palette, field-green);
+			}
+		}
+	}
+	.plans {
+		.icon {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+			svg path,
+			svg circle,
+			svg ellipse {
+				stroke: map-get($foundation-palette, camden-orange);
+			}
+		}
 	}
 }
 
@@ -33,6 +54,11 @@ textarea[readonly] {
 	img {
 		width: auto;
 		height: 50px;
+	}
+	svg path,
+	svg circle,
+	svg ellipse {
+		stroke: map-get($foundation-palette, aubergine);
 	}
 }
 
@@ -174,9 +200,15 @@ textarea[readonly] {
 	}
 	.callout {
 		border-radius: 0 $global-radius $global-radius 0;
+		@include breakpoint (medium down) {
+			border-radius: 0 0 $global-radius $global-radius;
+		}
 	}
 	.copy {
 		padding: 1em 0;
+		@include breakpoint (medium down) {
+			padding-top: 0;
+		}
 	}
 	.image {
 		background-image: url(../images/beach-house.jpg);
@@ -217,23 +249,92 @@ textarea[readonly] {
 	}
   	color: map-get($foundation-palette, aubergine);
 	.plan {
-		display: -ms-flexbox;
-		display: flex;
+		@include breakpoint(large) {
+			display: -ms-flexbox;
+			display: flex;
+		}
+		@include breakpoint(medium down) {
+			margin-bottom: $global-margin;
+		}
+		&.highlight {
+			display: flex;
+			display: -ms-flexbox;
+			flex-direction: column;
+			-ms-flex-direction: column;
+			.badge {
+				color: map-get($foundation-palette, camden-orange);
+				margin-bottom: ($global-margin / 2);
+				font-weight: $global-weight-bold;
+				text-transform: uppercase;
+				.icon {
+					display: inline-block;
+					vertical-align: middle;
+					margin: 0;
+					svg path,
+					svg circle,
+					svg ellipse {
+						stroke: map-get($foundation-palette, camden-orange);
+					}
+				}
+			}
+		}
 		.inside-box {
 			background: $white;
 			border-radius: $global-radius;
 			padding: 1em;
-			position: relative;
 			.inside-top {
-				margin-bottom: 120px;
+				margin-bottom: 10em;
+				position: relative;
+			}
+			.title {
+				color: map-get($foundation-palette, aubergine);
+				margin-bottom: 0;
+			}
+			.subtitle {
+				font-style: italic;
 			}
 			.price-box {
 				position: absolute;
-				right: -2px;
-				left: -2px;
-				top: 125px;
-				&.highlight {
-					background: map-get($foundation-palette, light-orange);
+				right: -18px;
+				left: -18px;
+				bottom: -8.5em;
+				color: $white;
+				padding: .75em 0;
+				//font-size: rem-calc(14);
+				&.yellow {
+					background: map-get($foundation-palette, camden-orange);
+					color: map-get($foundation-palette, aubergine);
+					.price {
+						@include breakpoint(large) {
+							font-size: rem-calc(43);
+						}
+					}
+				}
+				&.blue {
+					background: map-get($foundation-palette, blue);
+				}
+				&.purple {
+					background: map-get($foundation-palette, purple);
+				}
+				.price {
+					font-size: rem-calc(35);
+					font-weight: $global-weight-bold;
+					margin: 0;
+					line-height: 1em;
+				}
+			}
+			.anchor {
+				display: block;
+				color: map-get($foundation-palette, aubergine);
+				font-weight: $global-weight-bold;
+				margin-bottom: $global-margin;
+				@include breakpoint(large) {
+					display: none;
+				}
+				.icon {
+					display: inline-block;
+					vertical-align: middle;
+					margin: 0;
 				}
 			}
 		}
@@ -241,11 +342,19 @@ textarea[readonly] {
 }
 .perks {
 	table {
-		border-radius: 10px;
-		border: 1px solid;
-		color: $body-font-color-dark;
-		thead, tr, td {
+		color: $body-font-color-light;
+		border-collapse: separate;
+		display: block;
+		tbody, tfoot, thead, tr, td {
 			border-collapse: separate;
+			display: block;
+		}
+		tr {
+			border-radius: 10px;
+			border: 0px solid map-get($foundation-palette, aubergine);
+		}
+		tbody tr:nth-child(odd) {
+			background-color: rgba(255,255,255,0.1);
 		}
 	}
 }
@@ -257,6 +366,16 @@ textarea[readonly] {
 		right: 0;
 		left: 0;
 		border-radius: 0 0 $global-radius $global-radius;
+		color: $white;
+		font-weight: $global-weight-bold;
+		padding-top: $global-padding;
+		padding-bottom: $global-padding;
+		@include breakpoint(medium down) {
+			span {
+				display: block;
+				text-align: center;
+			}
+		}
 	}
 }
 #map {
