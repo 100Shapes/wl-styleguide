@@ -18,6 +18,11 @@ textarea:disabled,
 textarea[readonly] {
 	border-color: $bg-gray;
 }
+input {
+	&::-webkit-input-placeholder {
+		font-style: italic;
+	}
+}
 .fields {
 	.title,
 	.container-title {
@@ -104,7 +109,7 @@ textarea[readonly] {
 				background: rgba(51, 48, 64, 0.8);
 			}
 			.content {
-				padding: 4em 0;
+				padding: 6.5em 0 4em;
 				position: relative;
 				z-index: -1;
 			}
@@ -351,11 +356,32 @@ textarea[readonly] {
 			display: block;
 		}
 		tr {
-			border-radius: 10px;
-			border: 0px solid map-get($foundation-palette, aubergine);
+			@include breakpoint(large) {
+				border-radius: 10px;
+				border: 0px solid map-get($foundation-palette, aubergine);
+				&:nth-child(odd) {
+					background-color: rgba(255,255,255,0.05);
+				}
+				&:nth-child(even) {
+					background-color: rgba(255,255,255,0.1);
+				}
+			}
 		}
-		tbody tr:nth-child(odd) {
-			background-color: rgba(255,255,255,0.1);
+		@include breakpoint(medium down) {
+			tr:nth-child(2n+1) td:nth-child(odd),
+			tr:nth-child(2n) td:nth-child(even) {
+				background-color: rgba(255,255,255,0.1);
+			}
+			tr:first-child td:first-child {
+				border-radius: $global-radius $global-radius 0 0;
+			}
+			tr:last-child td:last-child {
+				border-radius: 0 0 $global-radius $global-radius;
+			}
+			tr:nth-child(2n+1) td:nth-child(even),
+			tr:nth-child(2n) td:nth-child(odd) {
+				background-color: rgba(255,255,255,0.05);
+			}
 		}
 	}
 }
@@ -409,7 +435,9 @@ textarea[readonly] {
 // Navigation
 
 .top-bar {
-	position: relative;
+	position: fixed;
+	z-index: 50;
+	width: 100%;
 	> * {
 		line-height: 3em;
 	}
@@ -432,6 +460,7 @@ textarea[readonly] {
 	}
 	.burger-menu {
 		float: right;
+		margin-right: $global-margin;
 	}
 	.top-bar-left {
 		@include breakpoint(medium down) {
@@ -699,13 +728,14 @@ footer {
 
 .reveal {
 	color: $white;
+	overflow: visible;
 }
 
 /* Burger Icon */
 
 #mobile-nav-icon {
 	width: 30px;
-	height: 30px;
+	height: 25px;
 	position: relative;
 	-webkit-transform: rotate(0deg);
 	-moz-transform: rotate(0deg);
@@ -774,7 +804,7 @@ footer {
 /* Fancy Select */
 div.fancy-select {
 	position: relative;
-	font-weight: bold;
+	font-weight: $global-weight-bold;
 	text-transform: uppercase;
 	color: map-get($foundation-palette, aubergine);
 }
@@ -783,16 +813,12 @@ div.fancy-select.disabled {
 	opacity: 0.5;
 }
 
-div.fancy-select select:focus + div.trigger {
-	box-shadow: 0 0 0 2px #4B5468;
-}
-
 div.fancy-select select:focus + div.trigger.open {
 	box-shadow: none;
 }
 
 div.fancy-select div.trigger {
-	border-radius: 4px;
+	border-radius: $global-radius;
 	cursor: pointer;
 	padding: $global-padding;
 	white-space: nowrap;
@@ -801,7 +827,6 @@ div.fancy-select div.trigger {
 	position: relative;
 	background: $white;
 	color: map-get($foundation-palette, aubergine);
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 	width: 100%;
 
 	transition: all 240ms ease-out;
@@ -864,7 +889,6 @@ div.fancy-select ul.options {
 	overflow: auto;
 	background: $white;
 	border-radius: $global-radius;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 	min-width: 100%;
 
 	transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
@@ -888,7 +912,7 @@ div.fancy-select ul.options.open {
 
 div.fancy-select ul.options.overflowing {
 	top: auto;
-	bottom: 40px;
+	bottom: 50px;
 
 	transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
 	-webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;

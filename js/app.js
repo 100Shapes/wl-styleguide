@@ -64,7 +64,7 @@ $(document).ready(function(){
 
 // Fancy Select
 $(document).ready(function(){
-    $('.mobile-select').fancySelect();
+    $('select').fancySelect();
 });
 
 // Dropdown navigation menu
