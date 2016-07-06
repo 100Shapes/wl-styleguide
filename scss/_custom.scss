@@ -388,10 +388,10 @@ input {
 
 	.map {
 		@include breakpoint(large) {
-			padding-bottom: 2em;
+			padding-bottom: 2.72em;
 		}
 		@include breakpoint(medium down) {
-			padding-bottom: 9em;
+			padding-bottom: 9.75em;
 		}
 	}
 	.citymapper {
@@ -673,7 +673,7 @@ input {
 				}
 			}
 		}
-		
+
 		#panel1 {
 			background-image: url(../images/beach-2.jpg);
 
