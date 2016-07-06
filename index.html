@@ -8,54 +8,54 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body class="fields">
-    <!-- Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-title">
-        <a href="#"><img src="images/wl-logo-white.png" /></a>
-      </div>
-      <span data-responsive-toggle="responsive-menu" data-hide-for="large" class="burger-menu">
-        <div id="mobile-nav-icon" type="button" data-toggle>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </span>
-      <div id="responsive-menu">
-        <div class="top-bar-left">
-          <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu data-disable-hover="true" data-click-open="true">
-            <li>
-              <a href="#subnav1" class="link" data-id="subnav1">Locations</a>
-              <ul id="subnav1" class="expanded row column">
-                <ul class="menu menu-centered">
-                  <li class="large-4 large-offset-2 columns"><a href="#" class="camden">Camden</a></li>
-                  <li class="large-4 columns end"><a href="#" class="fields">London Fields</a></li>
-                </ul>
-              </ul>
-            </li>
-            <li>
-              <a href="#subnav2" class="link" data-id="subnav2">Perfect For</a>
-              <ul id="subnav2" class="expanded row column">
-                <ul class="menu menu-centered">
-                  <li class="large-4 columns"><a href="#" class="freelancer">Freelancer</a></li>
-                  <li class="large-4 columns"><a href="#" class="resident">Resident</a></li>
-                  <li class="large-4 columns"><a href="#" class="permanent">Permanent</a></li>
-                </ul>
-            </ul>
-            </li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Meeting Rooms</a></li>
-          </ul>
-        </div>
-        <div class="top-bar-right text-center">
-          <a href="#" class="button">Book a Tour</a>
-        </div>
-      </div>
-    </div>
     <!-- Header Banner -->
     <div class="wrapper top-header">
       <div class="full-screen-banner"  data-img-width="2560" data-img-height="1600">
+        <!-- Top Bar -->
+        <div class="top-bar">
+          <div class="top-bar-title">
+            <a href="#"><img src="images/wl-logo-white.png" /></a>
+          </div>
+          <span data-responsive-toggle="responsive-menu" data-hide-for="large" class="burger-menu">
+            <div id="mobile-nav-icon" type="button" data-toggle>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </span>
+          <div id="responsive-menu">
+            <div class="top-bar-left">
+              <ul class="dropdown menu vertical large-horizontal" data-dropdown-menu data-disable-hover="true" data-click-open="true">
+                <li>
+                  <a href="#subnav1" class="link" data-id="subnav1">Locations</a>
+                  <ul id="subnav1" class="expanded row column">
+                    <ul class="menu menu-centered">
+                      <li class="large-4 large-offset-2 columns"><a href="#" class="camden">Camden</a></li>
+                      <li class="large-4 columns end"><a href="#" class="fields">London Fields</a></li>
+                    </ul>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#subnav2" class="link" data-id="subnav2">Perfect For</a>
+                  <ul id="subnav2" class="expanded row column">
+                    <ul class="menu menu-centered">
+                      <li class="large-4 columns"><a href="#" class="freelancer">Freelancer</a></li>
+                      <li class="large-4 columns"><a href="#" class="resident">Resident</a></li>
+                      <li class="large-4 columns"><a href="#" class="permanent">Permanent</a></li>
+                    </ul>
+                </ul>
+                </li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Meeting Rooms</a></li>
+              </ul>
+            </div>
+            <div class="top-bar-right text-center">
+              <a href="#" class="button" data-open="book_tour">Book a Tour</a>
+            </div>
+          </div>
+        </div>
         <span class="image-toning"></span>
         <div class="row column text-center content">
           <div class="large-6 large-offset-3 small-12 columns">
@@ -333,10 +333,12 @@
     </div>
 
     <!-- Map Section -->
-    <div class="row column location">
+    <div class="row column">
       <div class="container wrapper">
         <div class="row text-center">
-          <h3 class="title">Where are we?</h3>
+          <div class="small-12">
+            <h3 class="title">Where are we?</h3>
+          </div>
         </div>
         <div class="row">
           <div class="large-12 small-12 columns map">
@@ -427,6 +429,15 @@
         </div>
       </div>
     </footer>
+
+    <div class="reveal text-center" id="book_tour" data-reveal>
+      <h1>Awesome. I Have It.</h1>
+      <p class="lead">Your couch. It is mine.</p>
+      <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/what-input.js"></script>
