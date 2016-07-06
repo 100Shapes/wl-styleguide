@@ -62,55 +62,40 @@ $(document).ready(function(){
     });
 });
 
-// Fancy Select
+// Fancy Select with mobile tabs selection
 $(document).ready(function(){
     $('select').fancySelect();
+    // Used only with Fancy Select
+    $('.options li').each(function(i) {
+        $(this).attr('id', 'panel' + (i%3 + 1));
+    });
+    $('.options li').click(function() {
+        if($(this).hasClass('selected')) {
+            var $panelClass = $(this).attr('id');
+            $('.tabs-panel').each(function() {
+                var $tabsClass = $(this).attr('id');
+                if($panelClass == $tabsClass) {
+                    $('.tabs-panel').hide();
+                    $(this).show();
+                }
+            });
+        }
+    });
 });
 
-// Dropdown navigation menu
+// Nav colouring scroll magic
 
-/* $(document).ready(function() {
-
-	// Add classes for parent items
-    console.log($('.dropdown.menu li a').data('id'));
-    $('.dropdown.menu li').each(function() {
-        if ($(this).find('a').data('id')) {
-            $(this).addClass('is-dropdown-submenu-parent');
-        }
-    });
-	if (!$('.dropdown.menu li a').data('id')) {
-		$(this).addClass('is-dropdown-submenu-parent');
-	}
-    //variable where currentAnchor is stored
-    var currentSection = 0;
-    // hides the submenu as soon as the DOM is ready
-    $('.subnav-container').hide();
-    // toggles the submenu on clicking the noted link  
-    $('.dropdown.menu li a.link').click(function() {
- 
-        // remove active class
-        $('.dropdown.menu li a.link').removeClass('active');
-        // add active class
-        $(this).addClass('active');
-        
-        var href = $(this).attr('href');
-        //hide all submenus
-        $('#hidden>ul').hide();
-        
-        //show one particular menu
-        $(href).show();
-
-        
-        //logic for hiding and showing submenu
-        if(currentSection == 0){
-            $('.subnav-container').slideToggle(200);
-            currentSection = href;
-        } else if (currentSection == href) {
-             $('.subnav-container').slideToggle(200);
-             currentSection = 0;    
+$(function(){
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop(); // how many pixels you've scrolled
+        var os = $('.top-header .content').offset().top; // pixels to the top of div1
+        var ht = $('.top-header .content').height(); // height of div1 in pixels
+        // if you've scrolled further than the top of div1 plus it's height
+        // change the color. either by adding a class or setting a css property
+        if(scroll > os + ht){
+            $('.top-bar').addClass('color');
         } else {
-            currentSection = href;
+            $('.top-bar').removeClass('color');
         }
-        return false;     		
     });
-}); */
+});
