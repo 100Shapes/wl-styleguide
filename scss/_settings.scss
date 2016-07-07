@@ -72,7 +72,8 @@ $dark-gray: #5b5b5b;
 $black: #0a0a0a;
 $white: #ffffff;
 $body-background: $bg-gray;
-$body-font-color-dark: $black;
+$body-font-color: map-get($foundation-palette, aubergine);
+$body-font-color-dark: map-get($foundation-palette, aubergine);
 $body-font-color-light: $white;
 $body-font-family: Open Sans, Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -105,7 +106,7 @@ $breakpoint-classes: (small medium large);
 $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: 20px,
+  small: 30px,
   medium: 30px,
 );
 $grid-column-align-edge: true;
@@ -120,25 +121,25 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 24,
-    'h2': 20,
-    'h3': 19,
+    'h1': 30,
+    'h2': 24,
+    'h3': 20,
     'h4': 18,
     'h5': 17,
     'h6': 16,
   ),
   medium: (
     'h1': 46.192,
-    'h2': 36.480,
-    'h3': 25.632,
-    'h4': 20.256,
+    'h2': 32,
+    'h3': 28,
+    'h4': 25,
     'h5': 20,
     'h6': 16,
   ),
 );
 $header-color: inherit;
-$header-lineheight: 1.4;
-$header-margin-bottom: 1.25rem;
+$header-lineheight: 1.2;
+$header-margin-bottom: .75rem;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $bg-gray;
@@ -275,7 +276,7 @@ $callout-background: $white;
 $callout-background-fade: 0%;
 $callout-border: 0px solid rgba($black, 0.25);
 $callout-margin: 0 0 0;
-$callout-padding: 2.5rem 1rem 1rem;
+$callout-padding: 2.5rem;
 $callout-font-color: $body-font-color-dark;
 $callout-font-color-alt: $body-font-color-light;
 $callout-radius: $global-radius;
@@ -345,14 +346,14 @@ $input-prefix-color: $black;
 $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $bg-gray;
 $input-prefix-padding: 1rem;
-$form-label-color: $black;
+$form-label-color: map-get($foundation-palette, aubergine);
 $form-label-font-size: rem-calc(14);
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;
 $select-background: $white;
 $select-triangle-color: $dark-gray;
 $select-radius: $global-radius;
-$input-color: $black;
+$input-color: map-get($foundation-palette, aubergine);
 $input-placeholder-color: $dark-gray;
 $input-font-family: inherit;
 $input-font-size: rem-calc(16);

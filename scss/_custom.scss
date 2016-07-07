@@ -28,6 +28,11 @@ input {
 	.container-title {
 		color: map-get($foundation-palette, field-green);
 	}
+	.wrapper {
+		&:not(.primary) .container-title {
+			text-shadow: 2px 2px 0 $light-gray;
+		}
+	}
 	.left-aligned-image-text,
 	.right-aligned-image-text {
 		.icon {
@@ -46,10 +51,21 @@ input {
 			svg path,
 			svg circle,
 			svg ellipse {
-				stroke: map-get($foundation-palette, camden-orange);
+				stroke: map-get($foundation-palette, aubergine);
 			}
 		}
 	}
+}
+.image-toning {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	background: rgba(51, 48, 64, 0.8);
 }
 
 .icon {
@@ -71,12 +87,12 @@ input {
 // Sections
 .container {
 	margin-bottom: ($global-margin * 2);
-	padding: 2.5em 0 2em;
+	padding: 3em 0;
 	position: relative;
 }
 
 .wrapper {
-	border-radius: $global-radius;
+	//border-radius: $global-radius;
 	background-color: $white;
 	&.primary {
 		background-color: map-get($foundation-palette, aubergine);
@@ -97,24 +113,13 @@ input {
 			height:100%;
 			overflow:hidden;
 			z-index: 0;
-			.image-toning {
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				height: 100%;
-				width: 100%;
-				z-index: -2;
-				background: rgba(51, 48, 64, 0.8);
-			}
 			.content {
 				@include breakpoint(medium down) {
 					padding: 6em 0 4em;
 				}
 				padding: 8em 0 4em;
 				position: relative;
-				z-index: -1;
+				z-index: 3;
 			}
 			.copy {
 			    position:relative;
@@ -125,10 +130,13 @@ input {
 		}
 		.slim-full-width-form {
 			background-color: map-get($foundation-palette, field-green);
-			padding: 1em 0;
+			padding: .5em 0;
+			position: relative;
+			z-index: 5;
 			@include breakpoint(medium down) {
 				margin: 0 $global-margin $global-margin;
 				border-radius: $global-radius;
+				padding: 2em 0;
 			}
 			.slim-form {
 				@include breakpoint(large) {
@@ -152,6 +160,9 @@ input {
 				text-transform: uppercase;
 				letter-spacing: 0.3px;
 				font-size: map-get(map-get($header-sizes, medium), h4) + px;
+				@include breakpoint(medium down) {
+					padding-bottom: 1em;
+				}
 			}
 		}
 	}
@@ -247,6 +258,14 @@ input {
 		}
 	}
 }
+.container {
+	.row {
+		margin-bottom: ($global-margin * 1.5);
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
 
 .plans {
 	margin-bottom: $global-margin;
@@ -275,6 +294,7 @@ input {
 				margin-bottom: ($global-margin / 2);
 				font-weight: $global-weight-bold;
 				text-transform: uppercase;
+				text-shadow: 2px 2px 0 $black;
 				.icon {
 					display: inline-block;
 					vertical-align: middle;
@@ -290,7 +310,7 @@ input {
 		.inside-box {
 			background: $white;
 			border-radius: $global-radius;
-			padding: 1em;
+			padding: 2em;
 			.inside-top {
 				margin-bottom: 10em;
 				position: relative;
@@ -304,12 +324,16 @@ input {
 			}
 			.price-box {
 				position: absolute;
-				right: -18px;
-				left: -18px;
+				right: -35px;
+				left: -35px;
 				bottom: -8.5em;
 				color: $white;
 				padding: .75em 0;
 				//font-size: rem-calc(14);
+				@include breakpoint(medium down) {
+					right: -32px;
+					left: -32px;
+				}
 				&.yellow {
 					background: map-get($foundation-palette, camden-orange);
 					color: map-get($foundation-palette, aubergine);
@@ -350,18 +374,30 @@ input {
 	}
 }
 .perks {
+	.title {
+		margin-top: ($global-margin * 2);
+	}
 	table {
 		color: $body-font-color-light;
 		border-collapse: separate;
 		display: block;
+		margin-bottom: 0;
 		tbody, tfoot, thead, tr, td {
 			border-collapse: separate;
 			display: block;
 		}
 		tr {
+			&.row {
+				margin-bottom: 0;
+			}
 			@include breakpoint(large) {
-				border-radius: 10px;
 				border: 0px solid map-get($foundation-palette, aubergine);
+				&:first-child {
+					border-radius: $global-radius $global-radius 0 0;
+				}
+				&:last-child {
+					border-radius: 0 0 $global-radius $global-radius;
+				}
 				&:nth-child(odd) {
 					background-color: rgba(255,255,255,0.05);
 				}
@@ -389,51 +425,183 @@ input {
 	}
 }
 
-	.map {
+.map {
+	@include breakpoint(large) {
+		padding-bottom: 1.6em;
+	}
+	@include breakpoint(medium down) {
+		padding-bottom: 8.6em;
+	}
+}
+.citymapper {
+	position: absolute;
+	bottom: 0;
+	background: map-get($foundation-palette, aubergine);
+	right: 0;
+	left: 0;
+	border-radius: 0 0 $global-radius $global-radius;
+	color: $white;
+	font-weight: $global-weight-bold;
+	padding-top: $global-padding;
+	padding-bottom: $global-padding;
+	span {
+		line-height: 2em;
+		@include breakpoint(medium down) {
+			display: block;
+			text-align: center;
+		}
+	}
+	.image {
 		@include breakpoint(large) {
-			padding-bottom: 2.72em;
+			float: right;
 		}
 		@include breakpoint(medium down) {
-			padding-bottom: 9.75em;
+			padding-top: 1em;
+		}
+		&:after {
+			display: table;
+			clear: both;
+			content: '';
 		}
 	}
-	.citymapper {
-		position: absolute;
-		bottom: 0;
-		background: map-get($foundation-palette, aubergine);
-		right: 0;
-		left: 0;
-		border-radius: 0 0 $global-radius $global-radius;
-		color: $white;
-		font-weight: $global-weight-bold;
-		padding-top: $global-padding;
-		padding-bottom: $global-padding;
-		span {
-			line-height: 2em;
-			@include breakpoint(medium down) {
-				display: block;
-				text-align: center;
-			}
-		}
-		.image {
-			@include breakpoint(large) {
-				float: right;
-			}
-			@include breakpoint(medium down) {
-				padding-top: 1em;
-			}
-			&:after {
-				display: table;
-				clear: both;
-				content: '';
-			}
-		}
-	}
+}
+
 #map {
    width: 100%;
    height: 400px;
    background-color: $light-gray;
  }
+
+.item {
+	@include breakpoint(medium down) {
+		margin-bottom: $global-margin;
+	}
+	.wrapper {
+	 	padding: ($global-padding * 2);
+	 	border-radius: 0 0 $global-radius $global-radius;
+	}
+	.item-top-image {
+	 	border-radius: $global-radius $global-radius 0 0;
+	 	-moz-background-size: cover;
+		-o-background-size: cover;
+		-webkit-background-size: cover;
+		background-size: cover;
+		position: relative;
+		background-position: 50% 50%;
+		/* ie8- graceful degradation */
+		background-position:50% 50%9 !important;
+		width: 100%;
+		height:100%;
+		overflow:hidden;
+	 }
+	&.membership {
+		a {
+			display: block;
+			color: map-get($foundation-palette, aubergine);
+			&:hover {
+				.wrapper {
+					background: map-get($foundation-palette, aubergine);
+					color: $white;
+				}
+				.item-top-image {
+					-webkit-filter: grayscale(0%);
+	    			filter: grayscale(0%);
+				}
+			}
+		}
+		.item-top-image {
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
+			&.one {
+				background-image: url(../images/beach-2.jpg);
+			}
+			&.two {
+				background-image: url(../images/beach-1.jpg);
+			}
+			&.three {
+				background-image: url(../images/beach-3.jpg);
+			}
+		 }
+	}
+	&.location {
+		a {
+			display: block;
+			position: relative;
+			color: map-get($foundation-palette, aubergine);
+			&:hover {
+				.image-toning {
+					opacity: .3;
+				}
+				.title {
+					color: map-get($foundation-palette, aubergine);
+				}
+				.item-top-image {
+					-webkit-filter: grayscale(0%);
+	    			filter: grayscale(0%);
+				}
+			}
+		}
+		.image-block {
+			position: relative;
+			.title {
+				color: $white;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: 10;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.item-top-image {
+				-webkit-filter: grayscale(100%);
+				filter: grayscale(100%);
+				&.camden {
+					background-image: url(../images/La-Digue-Beach-Seychelles.jpg);
+				}
+				&.fields {
+					background-image: url(../images/beach-1.jpg);
+				}
+				&.clerkenwell {
+					background-image: url(../images/beach-house.jpg);
+				}
+			 }
+		}
+		 &.large-4 {
+		 	.wrapper {
+			 	padding: ($global-padding * 2);
+			 	position: relative;
+				z-index: 2;
+			 }
+		 }
+		 &.large-6 {
+		 	.wrapper {
+			 	padding: ($global-padding * 2) ($global-padding * 3);
+			 	position: relative;
+				z-index: 2;
+			 }
+		 }
+	}
+	&.testimonial {
+		position: relative;
+		padding-top: 40px;
+		.item-top-image {
+			border-radius: 50%;
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			left: 50%;
+			top: 0px;
+			margin-left: -40px;
+		}
+		.wrapper {
+			padding-top: 80px;
+			color: map-get($foundation-palette, aubergine);
+		}
+	}
+}
 
 // Navigation
 
@@ -450,6 +618,7 @@ input {
 	}
 	&.color {
 		background: map-get($foundation-palette, aubergine);
+		box-shadow: 0px 3px rgba($black, .3);
 	}
 	.top-bar-title {
 		img {
@@ -564,17 +733,25 @@ input {
 	text-transform: uppercase;
 	font-weight: $global-weight-bold;
 	box-shadow: 2px 2px rgba($black, .3);
+	@include breakpoint(medium down) {
+		padding: 1em 2rem;
+	}
 }
 
 // Callout
 
-.callout.primary {
-	color: $white;
-	input:focus {
-		border-color: map-get($foundation-palette, camden-orange);
+.callout {
+	@include breakpoint(medium down) {
+		padding: 2.5em 1em;
 	}
-	label {
+	&.primary {
 		color: $white;
+		input:focus {
+			border-color: map-get($foundation-palette, camden-orange);
+		}
+		label {
+			color: $white;
+		}
 	}
 }
 
@@ -585,7 +762,6 @@ input {
 		border-radius: 0;
 	}
 	@include breakpoint(medium down) {
-		background: map-get($foundation-palette, aubergine);
 		padding-top: 2.5em;
 	}
 	.container-title {
@@ -704,6 +880,7 @@ footer {
 	@include breakpoint(medium down) {
 		text-align: center;
 		padding-top: $global-padding;
+		font-size: rem-calc(13);
 	}
 	a {
 		color: rgba($white, .4);
@@ -729,7 +906,12 @@ footer {
 		@include breakpoint(medium down) {
 			display: flex;
 			justify-content: center;
+			li > a {
+				padding: 1em .5rem;
+				font-size: rem-calc(13);
+			}
 		}
+
 	}
 }
 
@@ -738,6 +920,9 @@ footer {
 	overflow: visible;
 	.title {
 		font-size: rem-calc(32);
+	}
+	.fancy-select {
+		margin-bottom: ($global-margin * 2)
 	}
 }
 
@@ -817,7 +1002,6 @@ div.fancy-select {
 	font-weight: $global-weight-bold;
 	text-transform: uppercase;
 	color: map-get($foundation-palette, aubergine);
-	margin-bottom: ($global-margin * 2)
 }
 
 div.fancy-select.disabled {

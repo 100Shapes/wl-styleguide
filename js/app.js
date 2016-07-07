@@ -66,7 +66,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('select').fancySelect();
     // Used only with Fancy Select
-    $('.options li').each(function(i) {
+    /*$('.options li').each(function(i) {
         $(this).attr('id', 'panel' + (i%3 + 1));
     });
     $('.options li').click(function() {
@@ -80,22 +80,26 @@ $(document).ready(function(){
                 }
             });
         }
-    });
+    });*/
 });
 
 // Nav colouring scroll magic
 
 $(function(){
     $(window).scroll(function() {
-        var scroll = $(window).scrollTop(); // how many pixels you've scrolled
-        var os = $('.top-header .content').offset().top; // pixels to the top of div1
-        var ht = $('.top-header .content').height(); // height of div1 in pixels
-        // if you've scrolled further than the top of div1 plus it's height
-        // change the color. either by adding a class or setting a css property
-        if(scroll > os + ht){
-            $('.top-bar').addClass('color');
-        } else {
-            $('.top-bar').removeClass('color');
-        }
+            var check = $('body').find('.top-header');
+            if (check.length) {
+                var scroll = $(window).scrollTop(); // how many pixels you've scrolled
+                var os = $('.top-header .content').offset().top; // pixels to the top of div1
+                var ht = $('.top-header .content').height(); // height of div1 in pixels
+                // if you've scrolled further than the top of div1 plus it's height
+                // change the color. either by adding a class or setting a css property
+                if(scroll > os + ht){
+                    $('.top-bar').addClass('color');
+                } else {
+                    $('.top-bar').removeClass('color');
+                }
+            }
+            
     });
 });
