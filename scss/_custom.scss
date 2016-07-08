@@ -975,8 +975,14 @@ footer {
 	}
 }
 
+.slim-full-width-form {
+	span {
+		color: $white;
+	}
+}
+
 .reveal {
-	color: $white;
+	background-color: $bg-gray;
 	overflow: visible;
 	.title {
 		font-size: rem-calc(32);
