@@ -23,6 +23,9 @@ input {
 		font-style: italic;
 	}
 }
+.container-title {
+	text-shadow: 2px 2px 0 $gray;
+}
 .fields {
 	.title,
 	.container-title {
@@ -66,6 +69,10 @@ input {
 	width: 100%;
 	z-index: 1;
 	background: rgba(51, 48, 64, 0.8);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
 }
 
 .icon {
@@ -479,6 +486,10 @@ input {
 	.wrapper {
 	 	padding: ($global-padding * 2);
 	 	border-radius: 0 0 $global-radius $global-radius;
+	 	-webkit-transition: .4s ease-in-out;
+		-moz-transition: .4s ease-in-out;
+		-o-transition: .4s ease-in-out;
+		transition: .4s ease-in-out;
 	}
 	.item-top-image {
 	 	border-radius: $global-radius $global-radius 0 0;
@@ -493,11 +504,19 @@ input {
 		width: 100%;
 		height:100%;
 		overflow:hidden;
+		-webkit-transition: .4s ease-in-out;
+		-moz-transition: .4s ease-in-out;
+		-o-transition: .4s ease-in-out;
+		transition: .4s ease-in-out;
 	 }
 	&.membership {
 		a {
-			display: block;
 			color: map-get($foundation-palette, aubergine);
+			display: block;
+			//display: flex;
+			//align-items: stretch;
+			//flex-direction: column;
+			//height: 100%;
 			&:hover {
 				.wrapper {
 					background: map-get($foundation-palette, aubergine);
@@ -510,6 +529,10 @@ input {
 			}
 		}
 		.item-top-image {
+			//height: 20em;
+			//display: flex;
+			//flex-direction: column;
+			//align-items: stretch;
 			-webkit-filter: grayscale(100%);
 			filter: grayscale(100%);
 			&.one {
@@ -522,6 +545,13 @@ input {
 				background-image: url(../images/beach-3.jpg);
 			}
 		 }
+		 //.wrapper {
+		 	// display: flex;
+			// align-items: stretch;
+			// height: 100%;
+			// justify-content: center;
+			// flex-direction: column;
+		 // }
 	}
 	&.location {
 		a {
@@ -538,11 +568,15 @@ input {
 				.item-top-image {
 					-webkit-filter: grayscale(0%);
 	    			filter: grayscale(0%);
+	    			transform: scale(1.1);
 				}
 			}
 		}
 		.image-block {
 			position: relative;
+			overflow: hidden;
+			border-radius: $global-radius $global-radius 0 0;
+			z-index: 10;
 			.title {
 				color: $white;
 				position: absolute;
@@ -554,6 +588,26 @@ input {
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				margin-bottom: 0;
+				-webkit-transition: .25s ease-in-out;
+				-moz-transition: .25s ease-in-out;
+				-o-transition: .25s ease-in-out;
+				transition: .25s ease-in-out;
+			}
+			.image-toning {
+				border-radius: $global-radius $global-radius 0 0;
+				&.camden {
+					background: rgba(map-get($foundation-palette, camden-blue), .6);
+				}
+				&.fields {
+					background: rgba(map-get($foundation-palette, field-green), .6);
+				}
+				&.clerkenwell {
+					background: rgba(map-get($foundation-palette, red), .6);
+				}
+				&.bermondsey {
+					background: rgba(map-get($foundation-palette, purple), .6);
+				}
 			}
 			.item-top-image {
 				-webkit-filter: grayscale(100%);
@@ -599,6 +653,11 @@ input {
 		.wrapper {
 			padding-top: 80px;
 			color: map-get($foundation-palette, aubergine);
+			border-radius: $global-radius;
+		}
+		.name {
+			font-weight: $global-weight-bold;
+			margin-bottom: 0;
 		}
 	}
 }
@@ -640,6 +699,7 @@ input {
 	.burger-menu {
 		float: right;
 		margin-right: $global-margin;
+		z-index: 100;
 	}
 	.top-bar-left {
 		@include breakpoint(medium down) {

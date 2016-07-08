@@ -57,7 +57,7 @@ backgroundResize();
 
 // Burger menu animation
 $(document).ready(function(){
-    $('#mobile-nav-icon').click(function(){
+    $('#mobile-nav-icon').on('tap', function(){
         $(this).toggleClass('open');
     });
 });
@@ -66,21 +66,24 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('select').fancySelect();
     // Used only with Fancy Select
-    /*$('.options li').each(function(i) {
-        $(this).attr('id', 'panel' + (i%3 + 1));
+    $('select option').each(function(i) {
+        $(this).data('mobile', 'panel' + (i%3 + 1));
     });
-    $('.options li').click(function() {
-        if($(this).hasClass('selected')) {
-            var $panelClass = $(this).attr('id');
+
+    $('select.mobile-select').on('blur change', function() {
+        $(this).find('option').removeClass('selected');
+        $(this).find(':selected').addClass('selected');
+        if($(this).find(':selected').hasClass('selected')) {
+            var $panelClass = $(this).find(':selected').data('mobile');
             $('.tabs-panel').each(function() {
-                var $tabsClass = $(this).attr('id');
-                if($panelClass == $tabsClass) {
-                    $('.tabs-panel').hide();
-                    $(this).show();
+                var $tabsID = $(this).attr('id');
+                if($panelClass == $tabsID) {
+                    $('.tabs-panel').removeClass('is-active');
+                    $(this).addClass('is-active');
                 }
             });
         }
-    });*/
+    });
 });
 
 // Nav colouring scroll magic

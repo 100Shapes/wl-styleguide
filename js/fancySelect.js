@@ -10,7 +10,7 @@
       opts = {};
     }
     settings = $.extend({
-      forceiOS: false,
+      forceiOS: true,
       includeBlank: false,
       optionTemplate: function(optionEl) {
         return optionEl.text();
