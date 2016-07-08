@@ -133,7 +133,7 @@ $header-sizes: (
     'h1': 46.192,
     'h2': 32,
     'h3': 28,
-    'h4': 25,
+    'h4': 24,
     'h5': 20,
     'h6': 16,
   ),
@@ -208,8 +208,8 @@ $input-error-font-weight: $global-weight-bold;
 
 $accordion-background: $white;
 $accordion-plusminus: true;
-$accordion-item-color: foreground($accordion-background, $primary-color);
-$accordion-item-background-hover: $light-gray;
+$accordion-item-color: map-get($foundation-palette, aubergine);
+$accordion-item-background-hover: transparent;
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
 $accordion-content-border: 1px solid $light-gray;
@@ -361,8 +361,8 @@ $input-font-size: rem-calc(16);
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $bg-gray;
-$input-border: 1px solid $dark-gray;
-$input-border-focus: 2px solid $dark-gray;
+$input-border: 2px solid $light-gray;
+$input-border-focus: 2px solid map-get($foundation-palette, aubergine);
 $input-shadow: inset 0 0px 0px rgba($black, 0.1);
 $input-shadow-focus: 0 0 0px $bg-gray;
 $input-cursor-disabled: default;
@@ -463,7 +463,7 @@ $progress-radius: $global-radius;
 // 28. Reveal
 // ----------
 
-$reveal-background: map-get($foundation-palette, aubergine);
+$reveal-background: $light-gray;
 $reveal-width: 600px;
 $reveal-max-width: $global-width;
 $reveal-padding: ($global-padding * 2);
