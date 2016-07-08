@@ -1035,8 +1035,18 @@ footer {
 	}
 }
 
+.slim-full-width-form {
+	span {
+		color: $white;
+	}
+}
+
 .reveal {
+<<<<<<< HEAD
 	color: map-get($foundation-palette, aubergine);
+=======
+	background-color: $bg-gray;
+>>>>>>> origin/master
 	overflow: visible;
 	.title {
 		font-size: rem-calc(32);
