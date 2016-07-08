@@ -508,7 +508,7 @@ textarea {
 		-o-transition: .4s ease-in-out;
 		transition: .4s ease-in-out;
 	 }
-	&.membership {
+	&.regular {
 		a {
 			color: map-get($foundation-palette, aubergine);
 			display: block;
@@ -552,7 +552,7 @@ textarea {
 			// flex-direction: column;
 		 // }
 	}
-	&.location {
+	&.zoom {
 		a {
 			display: block;
 			position: relative;
@@ -1030,7 +1030,7 @@ footer {
 		@include breakpoint(medium down) {
 			display: -webkit-box;
 			-webkit-line-clamp: 2;
-			-webkit-box-orient: vertical;  
+			-webkit-box-orient: vertical;
 		}
 	}
 }
