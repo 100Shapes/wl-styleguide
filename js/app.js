@@ -60,11 +60,16 @@ $(document).ready(function(){
     $('#mobile-nav-icon').on('click', function(){
         $(this).toggleClass('open');
         $('.top-bar').toggleClass('full-height');
+        $('body').toggleClass('noscroll');
     });
     $('#mobile-nav-icon').on('tap', function(){
         $(this).toggleClass('open');
-        $('.top-bar').toggleClass('full-height');
+        $('.top-bar, body').toggleClass('full-height');
+        $('body').toggleClass('noscroll');
     });
+    $('body.noscroll').on('touchmove', function(e) {
+            e.preventDefault();
+    }, false);
 });
 
 // Fancy Select with mobile tabs selection
