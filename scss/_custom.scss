@@ -76,6 +76,9 @@ img.person {
 	width: 80px;
 	height: 80px;
 }
+.full-height {
+	height: 100%;
+}
 .justified {
 	display: flex;
 	justify-content: space-between;
@@ -211,7 +214,7 @@ img.person {
 				@include breakpoint(medium down) {
 					padding: 6em 0 4em;
 				}
-				padding: 8em 0 4em;
+				padding: 14% 0 5%;
 				position: relative;
 				z-index: 3;
 			}
@@ -220,6 +223,33 @@ img.person {
 			    vertical-align:middle;
 			    text-align:center;
 			    color: $white;
+			}
+			.partnership {
+				padding-top: $global-padding;
+				> * {
+					display: block;
+					@include breakpoint(large) {
+						display: inline-block;
+					}
+				}
+				img {
+					max-width: 150px;
+					height: auto;
+					@include breakpoint(medium down) {
+						margin: 0 auto;
+					}
+				}
+				span {
+					vertical-align: middle;
+					@include breakpoint(medium down) {
+						margin-bottom: 5px;
+					}
+					@include breakpoint(large) {
+						margin-right: 10px;
+						padding: 5px 10px 5px 0;
+						border-right: 1px solid $white;
+					}
+				}
 			}
 		}
 		.slim-full-width-form {
@@ -842,6 +872,8 @@ img.person {
 		box-shadow: 0px 3px rgba($black, .3);
 	}
 	.top-bar-title {
+		line-height: 3em;
+		padding: .5em 0;
 		img {
 			max-width: 180px;
 			height: auto;
@@ -857,6 +889,9 @@ img.person {
 			clear: both;
 			display: table;
 		}
+		@include breakpoint(medium down) {
+			height: 100%;
+		}
 	}
 	.burger-menu {
 		float: right;
@@ -866,16 +901,21 @@ img.person {
 	.top-bar-left {
 		@include breakpoint(medium down) {
 			margin-bottom: $global-margin;
+			padding: ($global-padding * 3.5) 0 0;
 		}
 		a {
 			color: map-get($foundation-palette, light-orange);
 			font-family: $header-font-family;
 			text-transform: uppercase;
+			line-height: 1.5em;
 		}
 	}
 	.top-bar-right {
+		line-height: 3.5em;
 		@include breakpoint(medium down) {
 			margin-bottom: 1.25em;
+			position: absolute;
+			bottom: 20px;
 		}
 	}
 	.subnav-container {
@@ -920,7 +960,7 @@ img.person {
 		}
 		@include breakpoint(medium down) {
 			position: relative;
-			display: block;
+			display: none;
 			left: 0 !important;
 		}
 	}
@@ -928,10 +968,10 @@ img.person {
 	// Overwriting default styles
 	.dropdown.menu>li.is-dropdown-submenu-parent>a {
 		@include breakpoint(medium down) {
-			pointer-events: none;
-			cursor: default;
-			color: $white;
-			padding-right: 1rem;
+			//pointer-events: none;
+			//cursor: default;
+			//color: $white;
+			//padding-right: 1rem;
 		}
 	}
 	.dropdown.menu.vertical>li.opens-right>a:after {
@@ -1141,12 +1181,6 @@ footer {
 			}
 		}
 
-	}
-}
-.faq {
-	.last-item {
-		padding-top: $global-padding;
-		font-weight: $global-weight-bold;
 	}
 }
 .accordion {

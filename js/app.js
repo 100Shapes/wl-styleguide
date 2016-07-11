@@ -57,8 +57,13 @@ backgroundResize();
 
 // Burger menu animation
 $(document).ready(function(){
+    $('#mobile-nav-icon').on('click', function(){
+        $(this).toggleClass('open');
+        $('.top-bar').toggleClass('full-height');
+    });
     $('#mobile-nav-icon').on('tap', function(){
         $(this).toggleClass('open');
+        $('.top-bar').toggleClass('full-height');
     });
 });
 
@@ -93,11 +98,11 @@ $(function(){
             var check = $('body').find('.top-header');
             if (check.length) {
                 var scroll = $(window).scrollTop(); // how many pixels you've scrolled
-                var os = $('.top-header .content').offset().top; // pixels to the top of div1
-                var ht = $('.top-header .content').height(); // height of div1 in pixels
+                var os = $('.top-header').offset().top; // pixels to the top of div1
+                //var ht = $('.top-header .content').height(); // height of div1 in pixels
                 // if you've scrolled further than the top of div1 plus it's height
                 // change the color. either by adding a class or setting a css property
-                if(scroll > os + ht){
+                if(scroll > os + 60){
                     $('.top-bar').addClass('color');
                 } else {
                     $('.top-bar').removeClass('color');
