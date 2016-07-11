@@ -26,6 +26,7 @@ textarea {
 }
 .container-title {
 	text-shadow: 2px 2px 0 $gray;
+	margin-bottom: 0;
 }
 .fields {
 	.title,
@@ -69,6 +70,30 @@ textarea {
 	-moz-transition: .25s ease-in-out;
 	-o-transition: .25s ease-in-out;
 	transition: .25s ease-in-out;
+}
+.justified {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	&.four {
+		.item {
+			max-width: 25%;
+			@include breakpoint(medium down) {
+				min-width: 50%;
+			}
+		}
+	}
+	&.three {
+		.item {
+			max-width: 33.333%;
+			@include breakpoint(medium down) {
+				min-width: 100%;
+			}
+		}
+	}
+}
+.bold {
+	font-weight: $global-weight-bold;
 }
 .blog-page {
 	background: $white;
@@ -142,6 +167,7 @@ textarea {
 		stroke: map-get($foundation-palette, aubergine);
 	}
 }
+
 
 
 // Sections
@@ -246,6 +272,12 @@ textarea {
 		@include breakpoint (medium down) {
 			padding-top: 0;
 		}
+		.title {
+			margin: 0 0 ($global-margin * 1.2);
+			@include breakpoint(medium down) {
+				text-align: center;
+			}
+		}
 	}
 	.image {
 		background-image: url(../images/beach-house.jpg);
@@ -273,6 +305,12 @@ textarea {
 			bottom: 0;
 			padding-top: 0;
 		}
+	}
+	.price {
+		font-size: rem-calc(40);
+		font-weight: $global-weight-bold;
+		margin-bottom: 0;
+		line-height: 1.4;
 	}
 }
 
@@ -324,10 +362,21 @@ textarea {
 		}
 	}
 }
+.overlay-title {
+	position: relative;
+	margin-bottom: ($global-margin * 2);
+	.overlay-image {
+		position: absolute;
+		max-width: 160px;
+		height: auto;
+		right: 5px;
+		top: 20px;
+	}
+}
 
 .container {
 	.row {
-		margin-bottom: ($global-margin * 1.5);
+		margin-bottom: ($global-margin * 2);
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -893,9 +942,13 @@ textarea {
 .button {
 	text-transform: uppercase;
 	font-weight: $global-weight-bold;
+	margin-bottom: ($global-margin / 2);
 	box-shadow: 2px 2px rgba($black, .3);
 	@include breakpoint(medium down) {
 		padding: 1em 2rem;
+	}
+	&:only-child {
+		margin-bottom: 0;
 	}
 }
 
@@ -1086,7 +1139,7 @@ footer {
 }
 .accordion {
 	list-style-type: none;
-	margin: 0;
+	margin: 0 0 $global-margin;
 	.accordion-item {
 		&:first-child {
 			border-radius: $global-radius $global-radius 0 0;
@@ -1144,6 +1197,7 @@ footer {
 			margin-top: -0.7rem;
 		}
 		p {
+			margin-bottom: 0;
 			@include breakpoint(medium down) {
 			display: -webkit-box;
 			-webkit-line-clamp: 2;
