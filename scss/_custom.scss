@@ -71,6 +71,11 @@ textarea {
 	-o-transition: .25s ease-in-out;
 	transition: .25s ease-in-out;
 }
+img.person {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+}
 .justified {
 	display: flex;
 	justify-content: space-between;
@@ -359,6 +364,16 @@ textarea {
 			bottom: 0;
 			padding-top: 0;
 			right: 50%;
+		}
+	}
+	&.quote {
+		img.person {
+			margin-right: $global-margin;
+		}
+		.details {
+			margin-top: $global-margin;
+			display: flex;
+			align-items: center;
 		}
 	}
 }
@@ -750,10 +765,7 @@ textarea {
 	&.testimonial {
 		position: relative;
 		padding-top: 40px;
-		.item-top-image {
-			border-radius: 50%;
-			width: 80px;
-			height: 80px;
+		.overlay-top-image {
 			position: absolute;
 			left: 50%;
 			top: 0px;
