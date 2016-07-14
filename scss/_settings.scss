@@ -72,6 +72,7 @@ $dark-gray: #5b5b5b;
 $black: #0a0a0a;
 $white: #ffffff;
 $gray: #dadada;
+$orange: map-get($foundation-palette, light-orange);
 $body-background: $bg-gray;
 $body-font-color: map-get($foundation-palette, aubergine);
 $body-font-color-dark: map-get($foundation-palette, aubergine);

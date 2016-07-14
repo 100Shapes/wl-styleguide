@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sites</title>
     <link rel="stylesheet" href="css/app.css">
+    <script src="node_modules/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script>
+      window.sr = ScrollReveal();
+
+      // Add class to <html> if ScrollReveal is supported
+      if (sr.isSupported()) {
+        document.documentElement.classList.add('sr');
+      }
+
+    </script>
   </head>
   <body class="fields">
     <!-- Top Bar -->
@@ -174,7 +184,7 @@
           <p>We've designed our spaces around things<br /> that matter most for our members.</p>
       </div>
       </div>
-      <div class="row text-center">
+      <div class="row text-center items">
         <div class="large-4 small-12 columns">
           <i class="icon wifi"><img src="images/backpack.svg" /></i>
           <h4>Free Wifi</h4>
@@ -191,7 +201,7 @@
           <p>3. This sets environment variables for the current shell that the Docker client will read which specify the TLS settings. You need to do this each time you open a new shell or restart your machine. You can now run Docker commands on this host.</p>
         </div>
       </div>
-      <div class="row text-center">
+      <div class="row text-center items">
         <div class="large-4 small-12 columns">
           <i class="icon phone"><img src="images/bubble-chat.svg" /></i>
           <h4>Free Refills</h4>
@@ -222,14 +232,14 @@
         <div class="large-4 large-push-4 small-12 columns plan highlight">
           <div class="badge">
             <i class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path d="M15.5 17.5h-9v-12.5c0-2.484 2.015-4.5 4.5-4.5s4.5 2.016 4.5 4.5v12.5z"/><path stroke-linecap="round" d="M10.5 17.5v6M13.5 12c-.553 0-1-.445-1-1v-4M10.5 7c0 .555-.447 1-1 1s-1-.445-1-1v-2M10.5 7c0-.551.447-1 1-1 .552 0 1 .449 1 1"/></g></svg>
+              <svg class="delay-2-5s" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path d="M15.5 17.5h-9v-12.5c0-2.484 2.015-4.5 4.5-4.5s4.5 2.016 4.5 4.5v12.5z"/><path stroke-linecap="round" d="M10.5 17.5v6M13.5 12c-.553 0-1-.445-1-1v-4M10.5 7c0 .555-.447 1-1 1s-1-.445-1-1v-2M10.5 7c0-.551.447-1 1-1 .552 0 1 .449 1 1"/></g></svg>
             </i>
             Our most popular offer
           </div>
           <div class="inside-box">
             <div class="inside-top">
-              <i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><g><circle stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="16.5" cy="6.561" r="5" fill="none"/><path d="M23.5 5.561c-.278 0-.5.225-.5.5 0 .276.222.5.5.5.275 0 .5-.224.5-.5s-.225-.5-.5-.5z"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M23.5 23.5v-16"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M16.688 21.516c-1.412 0-2.559-1.146-2.559-2.56 0-2.644-3.108-3.212-4.479-1.729-1.368-1.482-4.479-.914-4.479 1.729 0 1.414-1.146 2.56-2.559 2.56-.881 0-1.654-.443-2.114-1.12 1.921 4.314 7.298 3.515 9.151.665 1.853 2.85 7.23 3.649 9.153-.665-.459.676-1.233 1.12-2.114 1.12zM19.5 6.561c0 1.658-1.345 3-3 3" fill="none"/></g></svg>
+              <i class="icon">
+                <svg class="delay-1-5s" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><g><circle stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="16.5" cy="6.561" r="5" fill="none"/><path d="M23.5 5.561c-.278 0-.5.225-.5.5 0 .276.222.5.5.5.275 0 .5-.224.5-.5s-.225-.5-.5-.5z"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M23.5 23.5v-16"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M16.688 21.516c-1.412 0-2.559-1.146-2.559-2.56 0-2.644-3.108-3.212-4.479-1.729-1.368-1.482-4.479-.914-4.479 1.729 0 1.414-1.146 2.56-2.559 2.56-.881 0-1.654-.443-2.114-1.12 1.921 4.314 7.298 3.515 9.151.665 1.853 2.85 7.23 3.649 9.153-.665-.459.676-1.233 1.12-2.114 1.12zM19.5 6.561c0 1.658-1.345 3-3 3" fill="none"/></g></svg>
               </i>
               <h4 class="title">Title</h4>
               <span class="subtitle">Helping text</span>
@@ -248,8 +258,8 @@
         <div class="large-4 large-pull-4 small-12 columns plan">
           <div class="inside-box">
             <div class="inside-top">
-              <i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path stroke-linecap="round" d="M23.5 19.912c0 .877-.671 1.588-1.5 1.588h-20c-.828 0-1.5-.711-1.5-1.588v-14.824c0-.877.672-1.588 1.5-1.588h20c.829 0 1.5.711 1.5 1.588v14.824zM5 23.5h14M12 21.5v2"/><circle cx="12" cy="19.5" r=".5"/><path d="M.5 17.5h23"/></g></svg>
+              <i class="icon">
+                <svg class="delay-1-5s" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path stroke-linecap="round" d="M23.5 19.912c0 .877-.671 1.588-1.5 1.588h-20c-.828 0-1.5-.711-1.5-1.588v-14.824c0-.877.672-1.588 1.5-1.588h20c.829 0 1.5.711 1.5 1.588v14.824zM5 23.5h14M12 21.5v2"/><circle cx="12" cy="19.5" r=".5"/><path d="M.5 17.5h23"/></g></svg>
               </i>
               <h4 class="title">Title</h4>
               <span class="subtitle">Helping text</span>
@@ -268,7 +278,7 @@
           <div class="inside-box">
             <div class="inside-top">
               <i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><g><circle stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="16.5" cy="6.561" r="5" fill="none"/><path d="M23.5 5.561c-.278 0-.5.225-.5.5 0 .276.222.5.5.5.275 0 .5-.224.5-.5s-.225-.5-.5-.5z"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M23.5 23.5v-16"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M16.688 21.516c-1.412 0-2.559-1.146-2.559-2.56 0-2.644-3.108-3.212-4.479-1.729-1.368-1.482-4.479-.914-4.479 1.729 0 1.414-1.146 2.56-2.559 2.56-.881 0-1.654-.443-2.114-1.12 1.921 4.314 7.298 3.515 9.151.665 1.853 2.85 7.23 3.649 9.153-.665-.459.676-1.233 1.12-2.114 1.12zM19.5 6.561c0 1.658-1.345 3-3 3" fill="none"/></g></svg>
+                <svg class="delay-1-5s" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><g><circle stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="16.5" cy="6.561" r="5" fill="none"/><path d="M23.5 5.561c-.278 0-.5.225-.5.5 0 .276.222.5.5.5.275 0 .5-.224.5-.5s-.225-.5-.5-.5z"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M23.5 23.5v-16"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M16.688 21.516c-1.412 0-2.559-1.146-2.559-2.56 0-2.644-3.108-3.212-4.479-1.729-1.368-1.482-4.479-.914-4.479 1.729 0 1.414-1.146 2.56-2.559 2.56-.881 0-1.654-.443-2.114-1.12 1.921 4.314 7.298 3.515 9.151.665 1.853 2.85 7.23 3.649 9.153-.665-.459.676-1.233 1.12-2.114 1.12zM19.5 6.561c0 1.658-1.345 3-3 3" fill="none"/></g></svg>
               </i>
               <h4 class="title">Title</h4>
               <span class="subtitle">Helping text</span>
@@ -378,7 +388,7 @@
           <h2 class="title">Our members include</h2>
         </div>
       </div>
-      <div class="row column text-center">
+      <div class="row column text-center logo">
         <div class="large-2 large-offset-1 small-6 columns">
           <p>1. Logo</p>
         </div>
@@ -438,7 +448,7 @@
       </div>
     </footer>
 
-    <div class="reveal row column text-center" id="book_tour" data-reveal>
+    <div class="reveal row column text-center" id="book_tour" data-reveal data-animation-in="bounce-in hinge-in-from-middle-x" data-animation-out="bounce-out hinge-out-from-middle-x">
       <h2 class="title">Book a tour</h2>
       <div class="large-8 large-offset-2 small-12 columns">
         <input type="text" placeholder="Name">

@@ -116,3 +116,151 @@ $(function(){
             
     });
 });
+
+// Scroll Reveal
+$(function(){
+    // Changing the defaults
+    window.sr = ScrollReveal({ reset: true });
+
+    // Customizing a reveal set
+    sr.reveal('.top-header .copy h1:nth-of-type(1)', {
+        easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        origin: 'bottom',
+        distance: '40px',
+        duration: 600,
+        delay: 0,
+        reset: false
+    });
+    sr.reveal('.top-header .copy h1:nth-of-type(2)', {
+        easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        origin: 'bottom',
+        distance: '80px',
+        duration: 800,
+        delay: 200,
+        reset: false
+    });
+    sr.reveal('.partnership', {
+        easing: 'linear',
+        origin: 'bottom',
+        distance: '0px',
+        duration: 800,
+        delay: 1200,
+        reset: false
+    });
+    sr.reveal('.left-aligned-image-text', {
+        easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+        origin: 'bottom',
+        duration: 600,
+        delay: 200,
+        reset: false
+    });
+    sr.reveal('.left-aligned-image-text .copy .row', {
+        easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+        origin: 'bottom',
+        duration: 600,
+        delay: 200,
+        reset: false
+    });
+    sr.reveal('.logo .columns', {
+        easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+        origin: 'bottom',
+        duration: 600,
+        delay: 200,
+        reset: false
+    });
+    sr.reveal('.right-aligned-image-text', {
+        easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+        origin: 'bottom',
+        duration: 600,
+        delay: 200,
+        reset: false
+    });
+    sr.reveal('.tabbed', {
+        easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+        origin: 'bottom',
+        duration: 600,
+        delay: 200,
+        reset: false
+    });
+    sr.reveal('.value .items .columns', {
+        easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+        origin: 'bottom',
+        duration: 600,
+        delay: 200,
+        reset: false
+    });
+    sr.reveal('.plan', {
+        distance: '60px',
+        duration: 600,
+        delay: 200
+     });
+    sr.reveal('.highlight', {
+        duration: 600,
+        delay: 0
+    });
+    sr.reveal('.badge', {
+        easing: 'cubic-bezier(0.785, 0.135, 0.15, 0.86)',
+        origin: 'top',
+        duration: 400,
+        delay: 600
+    });
+    sr.reveal('.testimonial', {
+        duration: 1000
+    }, 200);
+    sr.reveal('.testimonial .person', {
+        easing: 'cubic-bezier(0.86, 0, 0.07, 1);',
+        rotate: { x: 0, y: 0, z: 100 },
+        distance: '50px',
+        scale: 0.7,
+        duration: 1200,
+        delay: 200
+    });
+    sr.reveal('.regular', {
+        easing: 'cubic-bezier(0.55, 0.085, 0.68, 0.53);',
+        scale: 1,
+        duration: 600,
+        delay: 200,
+        reset: false
+     });
+    sr.reveal('.regular .wrapper > *', {
+        easing: 'cubic-bezier(0.55, 0.085, 0.68, 0.53);',
+        scale: 0.9,
+        duration: 800,
+        delay: 600,
+        reset: false
+     });
+
+});
+
+// Button Ripple Animation Effect
+
+$(function(){
+    //jQuery time
+    var parent, ink, d, x, y;
+    $(".button").click(function(e){
+        parent = $(this).parent();
+        //create .ink element if it doesn't exist
+        if(parent.find(".ink").length == 0)
+            $(this).prepend("<span class='ink'></span>");
+            
+        ink = parent.find(".ink");
+        //incase of quick double clicks stop the previous animation
+        ink.removeClass("animate");
+        
+        //set size of .ink
+        if(!ink.height() && !ink.width())
+        {
+            //use parent's width or height whichever is larger for the diameter to make a circle which can cover the entire element.
+            d = Math.max(parent.outerWidth(), parent.outerHeight());
+            ink.css({height: d, width: d});
+        }
+        
+        //get click coordinates
+        //logic = click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center;
+        x = e.pageX - parent.offset().left - ink.width()/2;
+        y = e.pageY - parent.offset().top - ink.height()/2;
+        
+        //set the position and add class .animate
+        ink.css({top: y+'px', left: x+'px'}).addClass("animate");
+    })
+});
