@@ -4,17 +4,17 @@ $(document).foundation();
 
 /* fix vertical when not overflow
 call fullscreenFix() if .fullscreen content changes */
-// function fullscreenFix(){
-//     var h = $('body').height();
-//     // set .fullscreen height
-//     $(".top-header .copy").each(function(i){
-//         if($(this).innerHeight() > h){
-//             $(this).closest(".full-screen-banner").addClass("overflow");
-//         }
-//     });
-// }
-// $(window).resize(fullscreenFix);
-// fullscreenFix();
+function fullscreenFix(){
+    var h = $('body').height();
+    // set .fullscreen height
+    $(".top-header .copy").each(function(i){
+        if($(this).innerHeight() > h){
+            $(this).closest(".full-screen-banner").addClass("overflow");
+        }
+    });
+}
+$(window).resize(fullscreenFix);
+fullscreenFix();
 
 /* resize background images */
 function backgroundResize(){
