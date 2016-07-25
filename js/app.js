@@ -4,17 +4,17 @@ $(document).foundation();
 
 /* fix vertical when not overflow
 call fullscreenFix() if .fullscreen content changes */
-function fullscreenFix(){
-    var h = $('body').height();
-    // set .fullscreen height
-    $(".top-header .copy").each(function(i){
-        if($(this).innerHeight() > h){
-            $(this).closest(".full-screen-banner").addClass("overflow");
-        }
-    });
-}
-$(window).resize(fullscreenFix);
-fullscreenFix();
+// function fullscreenFix(){
+//     var h = $('body').height();
+//     // set .fullscreen height
+//     $(".top-header .copy").each(function(i){
+//         if($(this).innerHeight() > h){
+//             $(this).closest(".full-screen-banner").addClass("overflow");
+//         }
+//     });
+// }
+// $(window).resize(fullscreenFix);
+// fullscreenFix();
 
 /* resize background images */
 function backgroundResize(){
@@ -113,7 +113,7 @@ $(function(){
                     $('.top-bar').removeClass('color');
                 }
             }
-            
+
     });
 });
 
@@ -242,11 +242,11 @@ $(function(){
         //create .ink element if it doesn't exist
         if(parent.find(".ink").length == 0)
             $(this).prepend("<span class='ink'></span>");
-            
+
         ink = parent.find(".ink");
         //incase of quick double clicks stop the previous animation
         ink.removeClass("animate");
-        
+
         //set size of .ink
         if(!ink.height() && !ink.width())
         {
@@ -254,12 +254,12 @@ $(function(){
             d = Math.max(parent.outerWidth(), parent.outerHeight());
             ink.css({height: d, width: d});
         }
-        
+
         //get click coordinates
         //logic = click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center;
         x = e.pageX - parent.offset().left - ink.width()/2;
         y = e.pageY - parent.offset().top - ink.height()/2;
-        
+
         //set the position and add class .animate
         ink.css({top: y+'px', left: x+'px'}).addClass("animate");
     })

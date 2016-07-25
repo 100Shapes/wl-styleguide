@@ -880,7 +880,7 @@ img.person {
 	position: fixed;
 	z-index: 50;
 	width: 100%;
-	
+
 	-webkit-transition: .25s ease-in-out;
 	-moz-transition: .25s ease-in-out;
 	-o-transition: .25s ease-in-out;
@@ -1289,10 +1289,22 @@ footer {
 	}
 }
 
+body.is-reveal-open {
+    overflow: auto !important;
+}
+
+.reveal-overlay {
+	width: 100%;
+	height: 100%;
+	right: auto;
+	bottom: auto;
+	overflow: hidden;
+}
+
 .reveal {
 	color: map-get($foundation-palette, aubergine);
 	background-color: $bg-gray;
-	overflow: visible;
+	overflow: hidden;
 	.title {
 		font-size: rem-calc(32);
 	}
