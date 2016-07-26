@@ -190,6 +190,12 @@ img.person {
 	margin-bottom: ($global-margin * 2);
 	padding: 3em 0;
 	position: relative;
+	&.tight-top {
+		padding-top: 0;
+	}
+	&.tight-bottom {
+		padding-bottom: 0;
+	}
 }
 
 .wrapper {
@@ -930,9 +936,10 @@ img.person {
 			text-transform: uppercase;
 			line-height: 1.5em;
 		}
+		padding-top: 0.25em;
 	}
 	.top-bar-right {
-		line-height: 3.5em;
+		line-height: 3.2em;
 		@include breakpoint(medium down) {
 			margin-bottom: 1.25em;
 			//position: absolute;
