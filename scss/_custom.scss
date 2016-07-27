@@ -198,6 +198,12 @@ img.person {
 	}
 }
 
+.lead {
+	font-size: 1.125em;
+	line-height: 1.5;
+	font-weight: bold;
+}
+
 .wrapper {
 	//border-radius: $global-radius;
 	background-color: $white;
@@ -909,7 +915,6 @@ img.person {
 	}
 	#responsive-menu {
 		display: none;
-		background: map-get($foundation-palette, aubergine);
 		padding: .5rem;
 		&:after {
 			content: '';
@@ -918,6 +923,7 @@ img.person {
 		}
 		@include breakpoint(medium down) {
 			//height: 100%;
+			background: map-get($foundation-palette, aubergine);
 		}
 	}
 	.burger-menu {
@@ -1184,12 +1190,16 @@ footer {
 		padding-top: $global-padding;
 		font-size: rem-calc(13);
 	}
+	.menu>li>a {
+		line-height: 2.5;
+		padding: 0.75em .60rem;
+	}
 	a {
 		color: rgba($white, .4);
 		font-weight: $global-weight-bold;
 	}
 	.logo {
-		line-height: 3em;
+		line-height: 4;
 		@include breakpoint(large) {
 			float: left;
 		}
@@ -1576,7 +1586,7 @@ div.fancy-select ul.options li.selected {
 }
 
 a {
-	&:hover {
+	&:hover, &.show {
 		svg {
 			stroke-dasharray: 200;
 			stroke-dashoffset: 200;
@@ -1587,9 +1597,10 @@ a {
 			}
 		}
 	}
+
 }
 .plan {
-	&:hover {
+	&:hover, &.show {
 		.inside-box {
 			svg {
 			stroke-dasharray: 200;
