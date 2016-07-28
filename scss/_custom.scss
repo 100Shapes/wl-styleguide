@@ -345,6 +345,7 @@ img.person {
 		background-position:50% 50%9 !important;
 		overflow:hidden;
 		border-radius: $global-radius;
+	    z-index: 1;
 		@include breakpoint(small) {
 			position: relative;
 			width: 100%;
@@ -560,7 +561,7 @@ img.person {
 	}
 }
 .perks {
-	.title {
+	.container-title {
 		margin-top: ($global-margin * 2);
 	}
 	table {
@@ -573,6 +574,9 @@ img.person {
 			display: block;
 		}
 		tr {
+			&:nth-child(even) {
+	    		background-color: rgba(255,255,255,0.1);
+			}
 			&.row {
 				margin-bottom: 0;
 			}
@@ -913,6 +917,18 @@ img.person {
 			display: inline-block;
 		}
 	}
+	.dropdown-pane {
+		z-index: -1;
+		margin-top: -200px;
+		padding-top: 100px;
+		.menu li {
+			background-size: cover;
+			a {
+				padding: 4rem 1rem;
+			}
+		}
+
+	}
 	#responsive-menu {
 		display: none;
 		padding: .5rem;
@@ -998,6 +1014,7 @@ img.person {
 			left: 0 !important;
 		}
 	}
+
 
 	// Overwriting default styles
 	.dropdown.menu>li.is-dropdown-submenu-parent>a {
