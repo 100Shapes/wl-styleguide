@@ -23,6 +23,12 @@ textarea {
 	&::-webkit-input-placeholder {
 		font-style: italic;
 	}
+
+
+}
+
+input.is-invalid-input {
+	background-color: map-get($foundation-palette, field-red) !important;
 }
 .container-title {
 	text-shadow: 2px 2px 0 $gray;
@@ -40,6 +46,37 @@ textarea {
 			svg ellipsis,
 			svg circle {
 				stroke: map-get($foundation-palette, field-green);
+				fill: transparent;
+			}
+		}
+	}
+	.plan {
+		.icon {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+			svg path,
+			svg circle,
+			svg ellipse {
+				stroke: map-get($foundation-palette, aubergine);
+				fill: transparent;
+			}
+		}
+	}
+}
+
+.camden {
+	.title,
+	.container-title {
+		color: map-get($foundation-palette, camden-blue);
+	}
+	.left-aligned-image-text,
+	.right-aligned-image-text {
+		.icon {
+			svg path,
+			svg ellipsis,
+			svg circle {
+				stroke: map-get($foundation-palette, camden-blue);
 				fill: transparent;
 			}
 		}
@@ -272,10 +309,23 @@ img.person {
 			}
 		}
 		.slim-full-width-form {
-			background-color: map-get($foundation-palette, field-green);
+			background-color: map-get($foundation-palette, aubergine);
 			padding: .5em 0;
 			position: relative;
 			z-index: 5;
+
+			.camden & {
+				background-color: map-get($foundation-palette, camden-blue);
+			}
+			.fields & {
+				background-color: map-get($foundation-palette, field-green);
+			}
+			.clerkenwell & {
+				background-color: map-get($foundation-palette, red);
+			}
+			.bermondsey & {
+				background-color: map-get($foundation-palette, purple);
+			}
 			@include breakpoint(medium down) {
 				margin: 0 $global-margin $global-margin;
 				border-radius: $global-radius;
@@ -743,7 +793,7 @@ img.person {
 			color: map-get($foundation-palette, aubergine);
 			&:hover {
 				.image-toning {
-					opacity: .3;
+					background: rgba(map-get($foundation-palette, aubergine), .5)!important;
 				}
 				.title {
 					color: map-get($foundation-palette, aubergine);
