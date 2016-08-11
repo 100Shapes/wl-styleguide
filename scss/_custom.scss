@@ -104,6 +104,11 @@ input.is-invalid-input {
 		}
 	}
 }
+
+.dark-link {
+	color: map-get($foundation-palette, warning);
+}
+
 .image-toning {
 	position: absolute;
 	top: 0;
@@ -686,7 +691,7 @@ img.person {
 		padding-bottom: 1.6em;
 	}
 	@include breakpoint(medium down) {
-		padding-bottom: 8.6em;
+		padding-bottom: 4.6em;
 	}
 }
 .citymapper {
