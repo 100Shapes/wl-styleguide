@@ -27,6 +27,15 @@ textarea {
 
 }
 
+p.small {
+	line-height: 1.2;
+	font-size: 80%;
+}
+
+.gray {
+	color: $dark-gray;
+}
+
 input.is-invalid-input {
 	background-color: map-get($foundation-palette, field-red) !important;
 }
@@ -378,9 +387,6 @@ img.person {
 		}
 		.title {
 			margin: 0 0 ($global-margin * 1.2);
-			@include breakpoint(medium down) {
-				text-align: center;
-			}
 		}
 	}
 	.image {
@@ -411,6 +417,11 @@ img.person {
 			padding-top: 0;
 		}
 	}
+
+	@include breakpoint(medium down) {
+		text-align: center;
+	}
+
 	.price {
 		font-size: rem-calc(40);
 		font-weight: $global-weight-bold;
@@ -475,6 +486,11 @@ img.person {
 			display: flex;
 			align-items: center;
 		}
+	}
+
+
+	@include breakpoint(medium down) {
+		text-align: center;
 	}
 }
 .overlay-title {
