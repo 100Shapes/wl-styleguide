@@ -504,12 +504,13 @@ img.person {
 	}
 }
 body.meetingrooms {
-	#meetingrooms_locations {
+	.location-selector .fancy-select {
 	    margin-bottom: 0rem;
 	}
 
 	.meeting-rooms {
 		padding-top: 0;
+		padding-bottom: 0;
 		.meeting-room {
 			margin:0;
 			padding-top: 0;
