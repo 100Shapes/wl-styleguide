@@ -260,6 +260,7 @@ img.person {
 	background-color: $white;
 	&.primary {
 		background-color: map-get($foundation-palette, aubergine);
+		z-index: -2;
 		color: $white;
 		.container-title {
 			text-shadow: 0px 0px 0 $light-gray;
@@ -426,13 +427,6 @@ img.person {
 	@include breakpoint(medium down) {
 		text-align: center;
 	}
-
-	.price {
-		font-size: rem-calc(40);
-		font-weight: $global-weight-bold;
-		margin-bottom: 0;
-		line-height: 1.4;
-	}
 }
 
 .right-aligned-image-text {
@@ -507,6 +501,20 @@ img.person {
 		height: auto;
 		right: 5px;
 		top: 20px;
+	}
+}
+.meeting-rooms {
+	padding-top: 0;
+	.meeting-room {
+		margin:0;
+		padding-top: 0;
+		padding-bottom: ($global-margin * 2);
+		.price {
+			font-size: rem-calc(40);
+			font-weight: $global-weight-bold;
+			margin-bottom: 0;
+			line-height: 1.4;
+		}
 	}
 }
 
@@ -631,6 +639,15 @@ img.person {
 		}
 	}
 }
+
+#dropdown-who {
+	.tile:hover{
+		h4 {
+			color: map-get($foundation-palette, light-orange);
+		}
+	}
+}
+
 .perks {
 	.container-title {
 		margin-top: ($global-margin * 2);
@@ -1136,6 +1153,7 @@ img.person {
 	}
 	&.primary {
 		color: $white;
+		// z-index: -2;
 		input:focus {
 			border-color: map-get($foundation-palette, camden-orange);
 		}
@@ -1221,6 +1239,7 @@ img.person {
 	.tabs-content {
 		border: 0;
 		.tabs-panel {
+			z-index: -3;
 			@include breakpoint(medium down) {
 				padding: 0;
 			}
@@ -1255,7 +1274,6 @@ img.person {
 
 		#panel1 {
 			background-image: url(../images/beach-2.jpg);
-
 		}
 		#panel2 {
 			background-image: url(../images/beach-1.jpg);
