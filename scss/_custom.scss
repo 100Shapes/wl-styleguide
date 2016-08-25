@@ -503,21 +503,33 @@ img.person {
 		top: 20px;
 	}
 }
-.meeting-rooms {
-	padding-top: 0;
-	.meeting-room {
-		margin:0;
+body.meetingrooms {
+	#meetingrooms_locations {
+	    margin-bottom: 0rem;
+	}
+
+	.meeting-rooms {
 		padding-top: 0;
-		padding-bottom: ($global-margin * 2);
-		.price {
-			font-size: rem-calc(20);
-			font-weight: $global-weight-bold;
-			margin-bottom: 0;
-			line-height: 1.4;
-			@include breakpoint (medium) {
-				font-size: rem-calc(40);
+		.meeting-room {
+			margin:0;
+			padding-top: 0;
+			padding-bottom: ($global-margin * 2);
+			.price {
+				font-size: rem-calc(20);
+				font-weight: $global-weight-bold;
+				margin-bottom: 0;
+				line-height: 1.4;
+				@include breakpoint (medium) {
+					font-size: rem-calc(40);
+				}
 			}
 		}
+	}
+}
+
+.form-popup {
+	.fancy-select {
+	    margin-bottom: 1.5rem;
 	}
 }
 
@@ -529,6 +541,8 @@ img.person {
 		}
 	}
 }
+
+
 
 .plans {
 	margin-bottom: $global-margin;
