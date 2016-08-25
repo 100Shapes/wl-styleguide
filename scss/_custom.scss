@@ -510,10 +510,13 @@ img.person {
 		padding-top: 0;
 		padding-bottom: ($global-margin * 2);
 		.price {
-			font-size: rem-calc(40);
+			font-size: rem-calc(20);
 			font-weight: $global-weight-bold;
 			margin-bottom: 0;
 			line-height: 1.4;
+			@include breakpoint (medium) {
+				font-size: rem-calc(40);
+			}
 		}
 	}
 }
