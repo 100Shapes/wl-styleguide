@@ -532,6 +532,36 @@ body.meetingrooms {
 	.fancy-select {
 	    margin-bottom: 1.5rem;
 	}
+	.date, .time{
+		font-style: italic;
+	    width:100%;
+		color: $input-placeholder-color;
+
+		&.placeholder::before{
+		    width:100%;
+		    content:attr(placeholder);
+			display: none;
+
+		}
+		&.placeholder:hover::before{
+		    width:0%;
+		    content:"";
+		}
+	}
+	&#book_meetingroom {
+		overflow-y: auto;
+		@include breakpoint(small down) {
+			.placeholder::before{
+				position: absolute;
+				display: block;
+
+			}
+			.close-button {
+				position: fixed;
+				padding-left: 10px;
+			}
+		}
+	}
 }
 
 .container {
