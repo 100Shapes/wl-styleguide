@@ -56,9 +56,13 @@ p.small {
 }
 .visible {
 	opacity: 1;
+	visibility: visible;
+	overflow: visible;
 }
 .hidden {
 	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
 }
 
 input.is-invalid-input {
@@ -793,12 +797,12 @@ body.meetingrooms {
 }
 
 .map {
-	@include breakpoint(large) {
+	/*@include breakpoint(large) {
 		padding-bottom: 1.6em;
 	}
 	@include breakpoint(medium down) {
 		padding-bottom: 4.6em;
-	}
+	}*/
 }
 .citymapper {
 	position: absolute;
@@ -1164,6 +1168,7 @@ body.meetingrooms {
 		float: right;
 		margin-right: $global-margin;
 		z-index: 100;
+		display: none;
 	}
 	.top-bar-left {
 		@include breakpoint(medium down) {
@@ -1186,7 +1191,6 @@ body.meetingrooms {
 			//bottom: 20px;
 		}
 		.button.visible {
-			
 		    /*-webkit-transform: scale(1);
 		    -moz-transform: scale(1);
 		    -o-transform: scale(1);
@@ -1199,6 +1203,8 @@ body.meetingrooms {
 			transform: translate3d(0, 0, 0);
 			backface-visibility: hidden;
 			perspective: 1000px;
+			-webkit-animation-iteration-count: 1; /* Chrome, Safari, Opera */
+    		animation-iteration-count: 1;
 		}
 		.button {
 			-webkit-transition: all 0.65s ease-in-out 0.1s;
@@ -1440,6 +1446,17 @@ body.meetingrooms {
 		}
 	}
 }
+
+.tabs-content.vertical.map {
+	border: 0;
+	.tabs-panel {
+		padding: 0;
+	}
+	.row {
+		margin: 0;
+	}
+}
+
 
 // Footer
 
