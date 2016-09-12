@@ -94,6 +94,7 @@ $(document).ready(function(){
             });
         }
     });
+
 });
 
 // Nav colouring scroll magic

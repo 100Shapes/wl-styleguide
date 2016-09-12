@@ -300,6 +300,23 @@ footer {
 	font-weight: bold;
 }
 
+.wrapper-switch {
+	@include breakpoint(medium down) {
+		background-color: map-get($foundation-palette, aubergine);
+		padding-bottom: 0;
+		margin-bottom: 5.5em;
+		color: $white;
+		border-radius: $global-radius;
+		.wrapper,
+		.tabs-content {
+			background-color: map-get($foundation-palette, aubergine);
+		}
+		.container-title {
+			text-shadow: none;
+		}
+	}
+}
+
 .wrapper {
 	//border-radius: $global-radius;
 	background-color: $white;
@@ -839,7 +856,7 @@ body.meetingrooms {
 
 #map {
    width: 100%;
-   height: 400px;
+   height: 450px;
    background-color: $light-gray;
  }
 
@@ -1446,14 +1463,73 @@ body.meetingrooms {
 		}
 	}
 }
-
+.tabs.vertical {
+	> li {
+		border-bottom: 1px solid $light-gray;
+    	border-right: 3px solid transparent;
+    	-webkit-transition: .5s ease-in-out;
+		-moz-transition: .5s ease-in-out;
+		-o-transition: .5s ease-in-out;
+		transition: .5s ease-in-out;
+    	&:last-child {
+    		border-bottom: 0;
+    	}
+    	&:hover,
+    	&.is-active {
+    		//border-bottom: 1px solid $medium-gray;
+    		border-right: 3px solid map-get($foundation-palette, light-orange);
+    	}
+	}
+	.tabs-title {
+		a {
+			text-align: center;
+		    padding: 1.65rem 1.5rem !important;
+		    &:focus,
+			&[aria-selected='true'] {
+				background: $light-gray;
+			}
+		}
+		img {
+			display: inline-block;
+		    max-width: 182px;
+		}
+	}
+}
 .tabs-content.vertical.map {
 	border: 0;
 	.tabs-panel {
 		padding: 0;
+		.details {
+			padding-left: $global-padding;
+			padding-right: $global-padding;
+			@include breakpoint(medium down) {
+				border-bottom: 3px solid $light-gray;
+				padding-bottom: $global-padding;
+			}
+			img {
+				width: 100%;
+				@include breakpoint(medium down) {
+					display: none;
+				}
+			}
+		}
 	}
 	.row {
 		margin: 0;
+	}
+}
+#locations-vert-tabs {
+	@include breakpoint(medium down) {
+		display: none;
+	}
+}
+.tabs-mobile {
+	.fancy-select {
+		margin-left: $global-padding;
+		margin-right: $global-padding;
+	}
+	@include breakpoint(large up) {
+		display: none;
 	}
 }
 
