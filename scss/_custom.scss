@@ -2,7 +2,7 @@
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
   }
-  
+
   20%, 80% {
     transform: translate3d(2px, 0, 0);
   }
@@ -364,6 +364,27 @@ footer {
 				}
 			}
 		}
+
+        .callout-form {
+            .title {
+                color: $white;
+                padding: 0 $global-margin $global-margin;
+            }
+
+            .camden & {
+				background-color: map-get($foundation-palette, camden-blue);
+			}
+			.fields & {
+				background-color: map-get($foundation-palette, field-green);
+			}
+			.clerkenwell & {
+				background-color: map-get($foundation-palette, red);
+			}
+			.bermondsey & {
+				background-color: map-get($foundation-palette, purple);
+			}
+
+        }
 		.slim-full-width-form {
 			background-color: map-get($foundation-palette, aubergine);
 			padding: .5em 0;
@@ -1186,7 +1207,7 @@ body.meetingrooms {
 			//bottom: 20px;
 		}
 		.button.visible {
-			
+
 		    /*-webkit-transform: scale(1);
 		    -moz-transform: scale(1);
 		    -o-transform: scale(1);
@@ -1285,6 +1306,9 @@ body.meetingrooms {
 	}
 }
 
+.banner-less {
+    padding-top: ($global-margin * 4);
+}
 // Buttons
 
 .button {
