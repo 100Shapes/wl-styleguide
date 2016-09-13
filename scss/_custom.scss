@@ -389,7 +389,12 @@ footer {
         .callout-form {
             .title {
                 color: $white;
-                padding: 0 $global-margin $global-margin;
+                padding: 0;
+                margin: 0;
+            }
+
+            input, .fancy-select, .title {
+                margin: 0 0 ($global-margin * 0.8)
             }
 
             .camden & {
