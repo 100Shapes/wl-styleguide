@@ -42,7 +42,9 @@ textarea {
 		font-style: italic;
 	}
 }
-
+figure {
+    margin: $global-margin;
+}
 p.small {
 	line-height: 1.2;
 	font-size: 80%;
@@ -63,6 +65,9 @@ p.small {
 	opacity: 0;
 	visibility: hidden;
 	overflow: hidden;
+}
+.border-top {
+	border-top: 1px solid $light-gray;
 }
 
 input.is-invalid-input {
@@ -282,15 +287,29 @@ footer {
 
 
 // Sections
+.row {
+	.container.wrapper,
+	.container.wrapper-switch {
+		border-radius: $global-radius;
+	}
+}
 .container {
 	margin-bottom: ($global-margin * 2);
 	padding: 3em 0;
 	position: relative;
+	width: 100%;
 	&.tight-top {
 		padding-top: 0;
 	}
 	&.tight-bottom {
 		padding-bottom: 0;
+		margin-bottom: ($global-margin * 4);
+	}
+	&.align {
+		padding-top: 0;
+	}
+	&.wrapper {
+		margin-bottom: ($global-margin * 4);
 	}
 }
 
@@ -299,8 +318,8 @@ footer {
 	line-height: 1.5;
 	font-weight: bold;
 }
-
 .wrapper-switch {
+	background-color: $white;
 	@include breakpoint(medium down) {
 		background-color: map-get($foundation-palette, aubergine);
 		padding-bottom: 0;
@@ -324,11 +343,13 @@ footer {
 		background-color: map-get($foundation-palette, aubergine);
 		z-index: -2;
 		color: $white;
+		margin-bottom: ($global-margin * 4);
 		.container-title {
 			text-shadow: 0px 0px 0 $light-gray;
 		}
 	}
 	&.top-header {
+		margin-bottom: ($global-margin * 3);
 		.full-screen-banner {
 			background-image: url(../images/La-Digue-Beach-Seychelles.jpg);
 			-moz-background-size: cover;
@@ -672,10 +693,15 @@ body.meetingrooms {
 	  	justify-content: center;
 	}
   	color: map-get($foundation-palette, aubergine);
+  	.alignment {
+  		@include breakpoint(large) {
+  			display: flex;
+  			align-items: stretch;
+  		}
+  	}
 	.plan {
 		@include breakpoint(large) {
-			display: -ms-flexbox;
-			display: flex;
+		    padding-top: 3.75em;
 		}
 		@include breakpoint(medium down) {
 			margin-bottom: $global-margin;
@@ -685,6 +711,7 @@ body.meetingrooms {
 			display: -ms-flexbox;
 			flex-direction: column;
 			-ms-flex-direction: column;
+		    padding-top: 0;
 			.badge {
 				color: map-get($foundation-palette, camden-orange);
 				margin-bottom: ($global-margin / 2);
@@ -706,10 +733,14 @@ body.meetingrooms {
 		}
 		.inside-box {
 			background: $white;
+			height: 100%;
 			border-radius: $global-radius;
-			padding: 2em;
+		    position: relative;
+		}
+		.inside-box-top {
+			padding: 2em 2em 0;
 			.inside-top {
-				margin-bottom: 10em;
+				margin-bottom: 8.5em;
 				position: relative;
 			}
 			.title {
@@ -745,6 +776,9 @@ body.meetingrooms {
 						}
 					}
 				}
+				&.aubergine {
+					background: lighten(map-get($foundation-palette, aubergine), 5%);
+				}
 				&.blue {
 					background: map-get($foundation-palette, blue);
 				}
@@ -772,6 +806,24 @@ body.meetingrooms {
 					margin: 0;
 				}
 			}
+		}
+		.inside-box-bottom {
+			margin-bottom: 7em;
+			ul {
+				li {
+				padding: 0.5em;
+					&:nth-of-type(even) {
+						background: $light-gray;
+					}
+				}
+			}
+		}
+		.inside-box-button {
+			position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    margin: 2em 0;
 		}
 	}
 }
@@ -1374,7 +1426,7 @@ body.meetingrooms {
 
 // Tabs
 .tabbed {
-	margin-bottom: ($global-margin * 2);
+	margin-bottom: ($global-margin * 4);
 	&.wrapper {
 		border-radius: 0;
 	}
@@ -1395,6 +1447,7 @@ body.meetingrooms {
 		margin-bottom: 0;
 	}
 	.tabs {
+		border-radius: $global-radius;
 		@include breakpoint(large) {
 			display: flex;
 			justify-content: center;
@@ -1417,6 +1470,7 @@ body.meetingrooms {
 				}
 			}
 			a {
+			    border-radius: $global-radius;
 				> * {
 					margin: 0;
 				}
@@ -1449,6 +1503,8 @@ body.meetingrooms {
 		border: 0;
 		.tabs-panel {
 			z-index: -3;
+			border-bottom-right-radius: $global-radius;
+			border-bottom-left-radius: $global-radius;
 			@include breakpoint(medium down) {
 				padding: 0;
 			}
@@ -1509,10 +1565,14 @@ body.meetingrooms {
     		border-right: 3px solid map-get($foundation-palette, light-orange);
     	}
 	}
+	.tabs {
+		border: none !important;
+	}
 	.tabs-title {
 		a {
 			text-align: center;
 		    padding: 1.65rem 1.5rem !important;
+		    border-bottom-left-radius: $global-radius;
 		    &:focus,
 			&[aria-selected='true'] {
 				background: $light-gray;
@@ -1696,6 +1756,7 @@ footer {
 .accordion {
 	list-style-type: none;
 	margin: 0 0 $global-margin;
+	border-radius: $global-radius;
 	.accordion-item {
 		&:first-child {
 			border-radius: $global-radius $global-radius 0 0;
@@ -2019,6 +2080,28 @@ div.fancy-select ul.options li.selected {
 	color: map-get($foundation-palette, aubergine);
 	cursor: default;
 	position: relative;
+}
+
+.royalSlider {
+	width: 100%;
+	height: 450px;
+}
+.rsDefault .rsGCaption {
+    background: rgb(51, 48, 64) !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    font-size: 1em;
+    text-align: center;
+}
+.rsSlide,
+.rsDefault,
+.rsDefault .rsOverflow,
+.rsDefault .rsSlide,
+.rsDefault .rsVideoFrameHolder,
+.rsDefault .rsThumbs {
+	border-bottom-right-radius: $global-radius;
+	border-bottom-left-radius: $global-radius;
 }
 
 // ScrollReveal
