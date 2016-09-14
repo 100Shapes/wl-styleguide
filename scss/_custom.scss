@@ -344,12 +344,17 @@ footer {
 			overflow:hidden;
 			z-index: 0;
 			.content {
+                padding: 14% 0 5%;
+				position: relative;
+				z-index: 3;
+                &.align-middle {
+                    padding: 7% 0 5%;
+                }
+
 				@include breakpoint(medium down) {
 					padding: 6em 0 4em;
 				}
-				padding: 14% 0 5%;
-				position: relative;
-				z-index: 3;
+
 			}
 			.copy {
 			    position:relative;
@@ -396,6 +401,10 @@ footer {
             input, .fancy-select, .title {
                 margin: 0 0 ($global-margin * 0.8)
             }
+
+            .flex & {
+				background-color: map-get($foundation-palette, aubergine);
+			}
 
             .camden & {
 				background-color: map-get($foundation-palette, camden-blue);
