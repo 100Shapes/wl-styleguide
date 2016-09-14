@@ -509,7 +509,7 @@ $table-hover-scale: 5%;
 $table-background: rgba($white, 0);
 $table-color-scale: 5%;
 $table-border: 1px solid smart-scale($table-background, $table-color-scale);
-$table-padding: rem-calc(8 10 10);
+$table-padding: rem-calc(12 10 12);
 $table-row-hover: lighten($table-background, $table-hover-scale);
 $table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
 $table-striped-background: rgba($white, .2);
