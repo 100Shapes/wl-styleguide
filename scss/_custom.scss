@@ -369,11 +369,17 @@ footer {
 				position: relative;
 				z-index: 3;
                 &.align-middle {
-                    padding: 7% 0 5%;
+                    padding: 9% 0 5%;
                 }
 
 				@include breakpoint(medium down) {
 					padding: 6em 0 4em;
+                    &.align-middle {
+                        padding: 15% 0 5%;
+                        .callout-form {
+                            margin-top: $global-margin;
+                        }
+                    }
 				}
 
 			}
@@ -941,9 +947,9 @@ body.meetingrooms {
 	}
 }
 
-#map {
+*[id^='map_'] {
    width: 100%;
-   height: 450px;
+   height: 100%;
    background-color: $light-gray;
  }
 
