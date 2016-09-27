@@ -18,6 +18,21 @@
 
 // General
 
+body {
+	&.color {
+		background: $body-font-color;
+		color: $white;
+		text-shadow: none;
+		.container-title {
+			text-shadow: none;
+			padding-top: $global-padding;
+		}
+		.container {
+			padding: 0;
+		}
+	}
+}
+
 h1,
 h2,
 h3,
@@ -311,6 +326,9 @@ footer {
 	&.wrapper {
 		margin-bottom: ($global-margin * 4);
 	}
+	&.no-margin {
+		margin-bottom: 0 !important;
+	}
 }
 
 .lead {
@@ -351,7 +369,7 @@ footer {
 	&.top-header {
 		margin-bottom: ($global-margin * 3);
 		.full-screen-banner {
-			background-image: url(../images/La-Digue-Beach-Seychelles.jpg);
+			//background-image: url(../images/La-Digue-Beach-Seychelles.jpg);
 			-moz-background-size: cover;
 			-o-background-size: cover;
 			-webkit-background-size: cover;
@@ -365,7 +383,7 @@ footer {
 			overflow:hidden;
 			z-index: 0;
 			.content {
-                padding: 14% 0 5%;
+                padding: 15% 0 8%;
 				position: relative;
 				z-index: 3;
                 &.align-middle {
@@ -852,8 +870,24 @@ body.meetingrooms {
 }
 
 .perks {
+	&.reverse {
+		.stack {
+			@include breakpoint(large down) {
+				margin-top: ($global-margin * 2);
+			}
+		}
+	}
 	.container-title {
 		margin-top: ($global-margin * 2);
+	}
+	.stack {
+		margin-bottom: 0;
+		@include breakpoint(large down) {
+			margin-bottom: ($global-margin * 2);
+		}
+	}
+	.masonry {
+		padding: 0;
 	}
 	table {
 		color: $body-font-color-light;
@@ -1139,6 +1173,10 @@ body.meetingrooms {
 		}
 	}
 	&.blog {
+		margin-bottom: ($global-margin * 1.5);
+		&:nth-of-type(3n+1) {
+			clear: both;
+		}
 		@include breakpoint(large) {
 			display: flex;
 		}
@@ -1839,14 +1877,7 @@ footer {
 		}
 	}
 }
-.perks {
-	.stack {
-		margin-bottom: ($global-margin * 2);
-	}
-	.masonry {
-		padding: 0;
-	}
-}
+
 .masonry {
 	display: -ms-flexbox;
     display: flex;
@@ -1856,9 +1887,10 @@ footer {
     flex-wrap: wrap;
     &.no-text {
     	.item {
+    		margin-bottom: 0;
 		    height: 5em;
 		    &.height-2 {
-		    	height: 12em;
+		    	height: 14em;
 		    }
 		}
 
@@ -1893,7 +1925,7 @@ footer {
 	    }
 	    .content {
 	    	border-radius: $global-radius;
-	    	background-image: url(/public/images/ohs/camden-banner.png);
+	    	//background-image: url(/public/images/ohs/camden-banner.png);
 			-moz-background-size: cover;
 			-o-background-size: cover;
 			-webkit-background-size: cover;
@@ -1915,13 +1947,15 @@ footer {
     		}
     		&.bottom {
     			align-items: flex-end;
+			    box-shadow: inset 0px -40px 80px -10px map-get($foundation-palette, aubergine);
     		}
 			.title {
 				text-transform: uppercase;
 				font-family: $header-font-family;
+				text-align: center;
 			}
 			.subtitle {
-			    margin: $global-margin ($global-margin / 2);
+			    margin: ($global-margin / 2) ($global-margin / 2);
 			}
 	    }
 	}
