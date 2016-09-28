@@ -1642,8 +1642,6 @@ body.meetingrooms {
 	.tabs-panel {
 		padding: 0;
 		.details {
-			padding-left: $global-padding;
-			padding-right: $global-padding;
 			@include breakpoint(medium down) {
 				border-bottom: 3px solid $light-gray;
 				padding-bottom: $global-padding;
@@ -1652,6 +1650,13 @@ body.meetingrooms {
 				width: 100%;
 				@include breakpoint(medium down) {
 					display: none;
+				}
+			}
+			p {
+				padding-left: $global-padding;
+				padding-right: $global-padding;
+				&:nth-of-type(1) {
+					margin-top: $global-margin;
 				}
 			}
 		}
@@ -1751,6 +1756,11 @@ footer {
 	a {
 		color: rgba($white, .4);
 		font-weight: $global-weight-bold;
+		&.color:hover {
+			svg path {
+				stroke: scale-color($anchor-color, $lightness: -14%);
+			}
+		}
 	}
 	.logo {
 		line-height: 5;
@@ -2247,12 +2257,16 @@ div.fancy-select ul.options li.selected {
 	height: 450px;
 }
 .rsDefault .rsGCaption {
-    background: rgb(51, 48, 64) !important;
+    background: transparent !important;
+    box-shadow: inset 0px -40px 80px -10px map-get($foundation-palette, aubergine);
     bottom: 0 !important;
     right: 0 !important;
     left: 0 !important;
     font-size: 1em;
-    text-align: center;
+    text-align: left;
+    img {
+    	float: right;
+    }
 }
 .rsSlide,
 .rsDefault,
