@@ -735,12 +735,14 @@ body.meetingrooms {
 	}
   	color: map-get($foundation-palette, aubergine);
   	.alignment {
+        width: 100%;
   		@include breakpoint(large) {
   			display: flex;
   			align-items: stretch;
   		}
   	}
 	.plan {
+
 		@include breakpoint(large) {
 		    padding-top: 3.75em;
 		}
