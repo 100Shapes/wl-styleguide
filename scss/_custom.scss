@@ -31,6 +31,14 @@ body {
 			padding: 0;
 		}
 	}
+	&.home,
+	&.camden,
+	&.fields,
+	&.bermondsey {
+		.wrapper.top-header .full-screen-banner .content {
+		    padding: 12% 0 4%;
+		}
+	}
 }
 
 h1,
@@ -1240,6 +1248,7 @@ body.meetingrooms {
 	-moz-transition: .25s ease-in-out;
 	-o-transition: .25s ease-in-out;
 	transition: .25s ease-in-out;
+	box-shadow: inset 0px 50px 80px -30px map-get($foundation-palette, aubergine);
 	> * {
 		line-height: 3.5em;
 	}
@@ -2258,7 +2267,7 @@ div.fancy-select ul.options li.selected {
 }
 .rsDefault .rsGCaption {
     background: transparent !important;
-    box-shadow: inset 0px -40px 80px -10px map-get($foundation-palette, aubergine);
+    box-shadow: inset 0px -40px 80px -30px map-get($foundation-palette, aubergine);
     bottom: 0 !important;
     right: 0 !important;
     left: 0 !important;
