@@ -961,12 +961,7 @@ body.meetingrooms {
 }
 
 .map {
-	/*@include breakpoint(large) {
-		padding-bottom: 1.6em;
-	}
-	@include breakpoint(medium down) {
-		padding-bottom: 4.6em;
-	}*/
+	pointer-events: none;
 }
 .citymapper {
 	position: absolute;
