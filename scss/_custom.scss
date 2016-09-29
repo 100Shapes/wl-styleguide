@@ -961,6 +961,12 @@ body.meetingrooms {
 .map {
 	pointer-events: none;
 }
+
+.businesses {
+    .without-flex {
+        display: none;
+    }
+}
 .citymapper {
 	position: absolute;
 	bottom: 0;
