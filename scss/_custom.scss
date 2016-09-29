@@ -678,6 +678,16 @@ body.meetingrooms {
 	}
 }
 
+.price {
+    font-size: rem-calc(20);
+    font-weight: $global-weight-bold;
+    margin-bottom: 0;
+    line-height: 1.4;
+    @include breakpoint (medium) {
+        font-size: rem-calc(40);
+    }
+}
+
 .form-popup {
 	.fancy-select {
 	    margin-bottom: 1.5rem;
