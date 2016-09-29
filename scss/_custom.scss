@@ -37,6 +37,9 @@ body {
 	&.bermondsey {
 		.wrapper.top-header .full-screen-banner .content {
 		    padding: 12% 0 4%;
+		    @include breakpoint(large down) {
+		    	padding: 30% 0 10%;
+		    }
 		}
 	}
 }
@@ -312,7 +315,8 @@ footer {
 // Sections
 .row {
 	.container.wrapper,
-	.container.wrapper-switch {
+	.container.wrapper-switch,
+	.wrapper-switch {
 		border-radius: $global-radius;
 	}
 }
@@ -1503,6 +1507,12 @@ body.meetingrooms {
 	&.wrapper {
 		border-radius: 0;
 	}
+	.wrapper-switch {
+		@include breakpoint(large down) {
+			padding-top: ($global-padding * 2);
+			padding-bottom: $global-padding;
+		}
+	}
 	@include breakpoint(medium down) {
 		padding-top: 2.5em;
 	}
@@ -1755,7 +1765,7 @@ footer {
 		svg {
 			margin-right: ($global-margin * 1.5);
 			@include breakpoint(medium down) {
-				margin: 0 ($global-margin * 1.5);
+				margin: 0 ($global-margin * 1);
 			}
 		}
 	}
