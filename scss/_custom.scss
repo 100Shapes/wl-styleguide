@@ -753,18 +753,13 @@ body.meetingrooms {
   	}
 	.plan {
 
-		@include breakpoint(large) {
-		    padding-top: 3.75em;
-		}
 		@include breakpoint(medium down) {
 			margin-bottom: $global-margin;
 		}
 		&.highlight {
-			display: flex;
-			display: -ms-flexbox;
-			flex-direction: column;
-			-ms-flex-direction: column;
-		    padding-top: 0;
+			.inside-box {
+				margin-top: 0;
+			}
 			.badge {
 				color: map-get($foundation-palette, camden-orange);
 				margin-bottom: ($global-margin / 2);
@@ -785,6 +780,9 @@ body.meetingrooms {
 			}
 		}
 		.inside-box {
+			@include breakpoint(large) {
+			    margin-top: 3.75em;
+			}
 			background: $white;
 			height: 100%;
 			border-radius: $global-radius;
@@ -861,7 +859,7 @@ body.meetingrooms {
 			}
 		}
 		.inside-box-bottom {
-			margin-bottom: 7em;
+			padding-bottom: 7em;
 			ul {
 				li {
 				padding: 0.5em;
