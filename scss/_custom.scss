@@ -1585,7 +1585,6 @@ body.meetingrooms {
 	.tabs-content {
 		border: 0;
 		.tabs-panel {
-			z-index: -3;
 			border-bottom-right-radius: $global-radius;
 			border-bottom-left-radius: $global-radius;
 			@include breakpoint(medium down) {
