@@ -165,6 +165,44 @@ input.is-invalid-input {
 	}
 }
 
+.bermondsey {
+	.title,
+	.container-title {
+		color: map-get($foundation-palette, bermondsey);
+	}
+
+    .primary {
+    	.container-title {
+    		color: white;
+    	}
+    }
+
+	.left-aligned-image-text,
+	.right-aligned-image-text {
+		.icon {
+			svg path,
+			svg ellipsis,
+			svg circle {
+				stroke: map-get($foundation-palette, bermondsey);
+				fill: transparent;
+			}
+		}
+	}
+	.plan {
+		.icon {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+			svg path,
+			svg circle,
+			svg ellipse {
+				stroke: map-get($foundation-palette, bermondsey);
+				fill: transparent;
+			}
+		}
+	}
+}
+
 .dark-link {
 	color: map-get($foundation-palette, warning);
 }
@@ -473,7 +511,7 @@ footer {
 				background-color: map-get($foundation-palette, red);
 			}
 			.bermondsey & {
-				background-color: map-get($foundation-palette, purple);
+				background-color: map-get($foundation-palette, bermondsey);
 			}
 
         }
@@ -493,7 +531,7 @@ footer {
 				background-color: map-get($foundation-palette, red);
 			}
 			.bermondsey & {
-				background-color: map-get($foundation-palette, purple);
+				background-color: map-get($foundation-palette, bermondsey);
 			}
 			@include breakpoint(medium down) {
 				margin: 0 $global-margin $global-margin;
@@ -1137,7 +1175,7 @@ body.meetingrooms {
 					background: rgba(map-get($foundation-palette, red), .6);
 				}
 				&.bermondsey {
-					background: rgba(map-get($foundation-palette, purple), .6);
+					background: rgba(white, .4);
 				}
 			}
 			.item-top-image {
