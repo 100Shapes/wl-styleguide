@@ -1508,7 +1508,7 @@ body.meetingrooms {
 		border-radius: 0;
 	}
 	.wrapper-switch {
-		@include breakpoint(large down) {
+		@include breakpoint(medium down) {
 			padding-top: ($global-padding * 2);
 			padding-bottom: $global-padding;
 		}
